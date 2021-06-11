@@ -1,0 +1,396 @@
+---
+---
+
+@import 'sass/utilities/initial-variables';
+
+$primary: $blue;
+$grey-darker: #111;
+
+// TODO: Set `$navbar-breakpoint: 900px;` when https://github.com/jgthms/bulma/pull/1183 is merged
+
+@import 'bulma';
+
+// Bulma overrides
+.navbar > .container .navbar-menu,
+.container > .navbar .navbar-menu {
+	margin-right: unset;
+}
+//
+
+// My variables
+$gray-link: hsl(0, 0%, 10%);
+
+
+// Gray section
+.is-gray {
+	background-color: hsl(210, 10%, 97%);
+
+	a {
+		color: $gray-link;
+	}
+
+	a:hover {
+		color: $black;
+	}
+
+	.tag {
+		background-color: #fff;
+	}
+}
+
+.is-gray-link {
+	color: $gray-link;
+}
+
+.tag.is-small {
+	font-size: 0.6rem;
+	line-height: 1;
+	font-weight: 500;
+}
+
+.tag {
+	color: hsl(0, 0%, 25%);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family:
+		-apple-system,
+		BlinkMacSystemFont,
+		'Segoe UI',
+		Roboto,
+		Helvetica,
+		Arial,
+		sans-serif,
+		'Apple Color Emoji',
+		'Segoe UI Emoji',
+		'Segoe UI Symbol';
+}
+
+// Make the navbar narrower
+@media screen and (min-width: 1088px) {
+	.navbar {
+		margin-left: 10vw;
+		margin-right: 10vw;
+	}
+}
+
+// Spread the items out more than the default
+.navbar-item {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.navbar-item.is-active {
+	border-color: transparent !important;
+}
+
+a.navbar-item:not(.button) {
+	color: hsla(0, 0%, 46%, 1);
+}
+
+.has-nice-link a:not(.button):not(.no-underline):not(.tag) {
+	box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.has-nice-link a:not(.button):not(.no-underline):not(.tag):hover {
+	box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.3);
+}
+
+.nice-link {
+	box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+
+	&:hover {
+		box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.3);
+	}
+}
+
+.is-primary .has-nice-link a:not(.button):not(.no-underline):not(.tag) {
+	box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
+}
+
+.is-primary .has-nice-link a:not(.button):not(.no-underline):not(.tag):hover {
+	box-shadow: inset 0 -2px 0 0 rgba(255, 255, 255, 0.7);
+}
+
+.box {
+	height: 100%;
+}
+
+.box .image {
+	margin-bottom: 10px;
+	border-radius: 2px;
+	box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.6);
+}
+
+@media (prefers-color-scheme: dark) {
+	.box .image {
+		box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.2);
+	}
+}
+
+.box .image img {
+	border-radius: 2px;
+}
+
+.box .title {
+	margin-bottom: 1.8rem;
+}
+
+.box .title a {
+	color: $primary;
+	box-shadow: inset 0 -2px 0 0 rgba(0, 0, 0, 0.1) !important;
+}
+
+.box .title a:hover {
+	color: #000;
+	box-shadow: inset 0 -2px 0 0 rgba(0, 0, 0, 0.3) !important;
+}
+
+#apps .box {
+	transition: 0.2s box-shadow;
+}
+
+#apps .box h2 {
+	font-size: 1.7rem;
+}
+
+#apps .box:hover {
+	box-shadow: 0 2px 10px rgba(10, 10, 10, 0.2),
+		0 0 0 1px rgba(10, 10, 10, 0.1)
+}
+
+#apps .box:hover .title span:first-child {
+	color: #000;
+	box-shadow: inset 0 -2px 0 0 rgba(0, 0, 0, 0.5) !important;
+}
+
+#apps .box h2 .tag {
+	position: relative;
+	bottom: 1px;
+}
+
+.is-dark-text * {
+	color: #363636 !important;
+}
+
+.is-centered {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#info-container .columns {
+	margin-bottom: 60px;
+}
+
+@media screen and (max-width: 500px) {
+	#info-container .columns {
+		margin-bottom: 20px;
+	}
+}
+
+#profile-pic {
+	margin-bottom: 10px;
+	border-radius: 80px;
+}
+
+#scroll-hint {
+	opacity: 0.5;
+	transition: opacity 0.5s ease-out !important;
+}
+
+#scroll-hint.hidden {
+	opacity: 0;
+}
+
+#latest-blog-post-separator {
+	opacity: 0.7;
+}
+
+#latest-blog-post {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 80px;
+	max-width: 600px;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	opacity: 0;
+	transition: opacity 0.8s ease-in;
+}
+
+#latest-blog-post .title {
+	font-size: 1.1rem;
+	margin-bottom: 0.5rem;
+}
+
+#latest-blog-post p {
+	font-size: 12px;
+	max-width: 400px;
+	text-align: center;
+}
+
+#latest-blog-post.visible {
+	opacity: 1;
+}
+
+#unicorn-btn {
+	transition: transform 0.3s ease-in-out;
+}
+
+#unicorn-btn:hover {
+	transform: scale(1.8);
+}
+
+#unicorn-icon {
+	margin-top: -80px;
+	margin-bottom: 20px;
+}
+
+#projects {
+	opacity: 0;
+	transition: opacity 0.5s ease-in;
+}
+
+#projects p {
+	font-size: 16px;
+}
+
+/* inline codeblock */
+code.highlighter-rouge {
+	color: #8f3d74;
+	word-break: break-all;
+}
+
+@media screen and (max-width: 500px) {
+	.is-hidden-small-screen {
+		display: none !important;
+	}
+}
+
+/*
+Font Awesome
+Generated with https://icomoon.io/app/
+*/
+@font-face {
+	font-family: 'font-awesome';
+	src: url('font-awesome.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^='fa-'],
+[class*='fa-'] {
+	font-family: 'font-awesome' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.fa-pencil:before {
+	content: '\e905';
+}
+
+.fa-github:before {
+	content: '\eab0';
+}
+
+.fa-twitter:before {
+	content: '\ea96';
+}
+
+.fa-caret-down:before {
+	content: '\e900';
+}
+
+kbd {
+	font-family: -apple-system, system-ui, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+	background-color: #fafbfc;
+	border: 1px solid #c6cbd1;
+	border-bottom-color: #959da5;
+	border-radius: 3px;
+	box-shadow: inset 0 -1px 0 #959da5;
+	color: #444d56;
+	display: inline-block;
+	font-size: 11px;
+	line-height: 10px;
+	padding: 3px 5px;
+	vertical-align: middle;
+	position: relative;
+	top: -1px;
+}
+
+.is-unclickable {
+	pointer-events: none;
+}
+
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		background-color: #070707 !important;
+	}
+
+	// We only do it on body as `filter` doesn't apply to the overscroll.
+	body {
+		background-color: #fefefe;
+		filter: invert(100%) hue-rotate(-180deg) brightness(105%) contrast(95%);
+	}
+
+	* {
+		background-color: inherit;
+	}
+
+	img,
+	video,
+	iframe,
+	body * [style*="background-image"],
+	.no-dark-mode {
+		filter: invert(100%) hue-rotate(-180deg) brightness(105%) contrast(95%) !important;
+		background-color: unset !important;
+	}
+}
+
+
+.box {
+    position: relative;
+}
+
+.box .image {
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.box .image img {
+    transition: transform 300ms ease-in-out;
+}
+
+.box:hover {
+    box-shadow: 0 2px 10px rgba(10, 10, 10, 0.2), 0 0 0 1px rgba(10, 10, 10, 0.5);
+}
+
+#apps .box:hover > .image img {
+    transform: scale(1.2);
+}
+
+.extern {
+    width: 1em;
+    margin: 0.2em
+}
+
+.extern.blink {
+    opacity: 0;
+    transition: opacity 0.2s ;
+}
+
+#apps .box:hover > div div .extern {
+    opacity: 100;
+}

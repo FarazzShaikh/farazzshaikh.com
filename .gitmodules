@@ -1,0 +1,6 @@
+[submodule "lib/glNoise"]
+	path = lib/glNoise
+	url = https://github.com/FarazzShaikh/glNoise.git
+[submodule "lib/three-noise"]
+	path = lib/three-noise
+	url = https://github.com/FarazzShaikh/three-noise.git

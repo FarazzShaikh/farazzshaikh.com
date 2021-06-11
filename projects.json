@@ -1,0 +1,49 @@
+[
+    {
+        "title": "Sea Breeze",
+        "disc": "Flying over a procedural ocean.",
+        "tags": ["Demo", "GPU", "WebGL"],
+        "lang": ["GLSL", "JavaScript"],
+        "path": "./Waves",
+        "lib": {
+            "name": "gl-Noise",
+            "repo": "https://github.com/FarazzShaikh/glNoise"
+        }
+    },
+    {
+        "title": "Planets",
+        "disc": "Generate random planets using procedural noise.",
+        "tags": ["Demo", "GPU", "WebGL"],
+        "lang": ["GLSL", "JavaScript"],
+        "path": "./Planet",
+        "lib": {
+            "name": "gl-Noise",
+            "repo": "https://github.com/FarazzShaikh/glNoise"
+        }
+    },
+    {
+        "title": "Voxel Terrain",
+        "disc": "Simple fBM terrain done in a Minecraft-like style.",
+        "tags": ["Demo", "CPU"],
+        "lang": ["JavaScript"],
+        "path": "./Voxel",
+        "lib": {
+            "name": "THREE-Noise",
+            "repo": "https://github.com/FarazzShaikh/three-noise"
+        }
+    },
+    {
+        "title": "FFT Noise",
+        "disc": "2D Fractal Noise using Fast Fourier Transforms.",
+        "tags": ["Noise Generation", "Article"],
+        "lang": ["C"],
+        "path": "./FFT-Noise"
+    },
+    {
+        "title": "IP Header Checksum",
+        "disc": "Exploring a very simple and widely used checksum algorithm.",
+        "tags": ["Article"],
+        "lang": ["C++"],
+        "path": "./Checksums"
+    }
+]

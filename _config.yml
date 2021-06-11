@@ -1,0 +1,6 @@
+livereload: true
+collections:
+  experiments:
+    output: true
+exclude:
+  - "about.html"

@@ -1,0 +1,50 @@
+---
+title: Planet Generator
+disc: Generate random planets using procedural noise.
+tags: GPU WebGL
+langs: GLSL JavaScript
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, minimal-ui, viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title>Faraz Shaikh | Planets</title>
+    <link href="../demos.css" rel="stylesheet" />
+    <style>
+      body {
+        background-color: #131313;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+      }
+      .Info {
+        color: white;
+        width: fit-content;
+      }
+    </style>
+    <script>
+      const s = webgl_support();
+      if (!s) {
+        window.location.replace("../noWebGL.html");
+      }
+      function webgl_support() {
+        try {
+          var canvas = document.createElement("canvas");
+          return !!window.WebGLRenderingContext && (canvas.getContext("webgl") || canvas.getContext("experimental-webgl"));
+        } catch (e) {
+          return false;
+        }
+      }
+    </script>
+  </head>
+  <body type="0">
+    <div class="Info">
+      Randomized Planets - by
+      <a href="https://github.com/FarazzShaikh">Faraz Shaikh</a>
+    </div>
+    <script type="module" src="./main.js" defer></script>
+  </body>
+</html>
