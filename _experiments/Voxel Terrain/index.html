@@ -1,18 +1,25 @@
 ---
+layout: demo
 title: Voxel Terrain
 disc: Simple fBM terrain done in a Minecraft-like style.
 tags: Demo CPU
 langs: JavaScript
+info:
+  - "This project is a simple demo of what can be created using my library [THREE-Noise](https://github.com/FarazzShaikh/three-noise). It the classic Mincraft-esque voxel terrain. Made using conventional Fractal noin conststing of layered Simplex noise. Each cube is an instanced mesh maeaning the whole terrain only takes 1 draw call to render. The colors are simply based on the height of the cube. <br /> <br /> ![banner](./Assets/banner.jpg)"
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" playing="false">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, minimal-ui, viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
-    <title>Faraz Shaikh | Voxel Terrain</title>
     <link href="../demos.css" rel="stylesheet" />
+    <style>
+      body {
+        background: #74ebd5;
+        background: -webkit-linear-gradient(to top, #acb6e5, #74ebd5);
+        background: linear-gradient(to top, #acb6e5, #74ebd5);
+      }
+    </style>
     <script>
       const s = webgl_support();
       if (!s) {
@@ -27,25 +34,10 @@ langs: JavaScript
         }
       }
     </script>
-    <style>
-      body {
-        background: #74ebd5;
-        background: -webkit-linear-gradient(to top, #acb6e5, #74ebd5);
-        background: linear-gradient(to top, #acb6e5, #74ebd5);
-
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-      }
-      .Info {
-        color: black;
-      }
-    </style>
   </head>
-  <body>
-    <div class="Info">Voxel Terrain - 2D Perlin Noise + fbm</div>
+  <body type="0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.js"></script>
     <script src="../../lib/three-noise/build/three-noise.js"></script>
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="./main.js" defer></script>
   </body>
 </html>

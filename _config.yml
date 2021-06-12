@@ -1,6 +1,8 @@
+title: Faraz Shaikh
 livereload: true
 collections:
   experiments:
     output: true
 exclude:
-  - "about.html"
+  - "About.*"
+host: 0.0.0.0

@@ -68,6 +68,7 @@ body {
 		'Apple Color Emoji',
 		'Segoe UI Emoji',
 		'Segoe UI Symbol';
+        height: 100vh;
 }
 
 // Make the navbar narrower
@@ -296,21 +297,6 @@ Generated with https://icomoon.io/app/
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.fa-pencil:before {
-	content: '\e905';
-}
-
-.fa-github:before {
-	content: '\eab0';
-}
-
-.fa-twitter:before {
-	content: '\ea96';
-}
-
-.fa-caret-down:before {
-	content: '\e900';
-}
 
 kbd {
 	font-family: -apple-system, system-ui, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
@@ -393,4 +379,10 @@ kbd {
 
 #apps .box:hover > div div .extern {
     opacity: 100;
+}
+
+.icon svg {
+    display: inline-block;
+    width: 24px;
+    overflow: hidden;
 }

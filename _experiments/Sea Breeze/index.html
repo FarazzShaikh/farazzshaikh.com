@@ -1,28 +1,23 @@
 ---
+layout: demo
 title: Sea Breeze
 disc: Flying over a procedural ocean.
 tags: GPU WebGL
 langs: GLSL JavaScript
+info:
+  - 'This is, once again, a demo for mt library [gl-Noise](https://github.com/FarazzShaikh/glNoise). It demostrates a procedual ocean made using Gerstner Waves. To produce detailed waves, many layers of varying Gerstner Waves were used akin to Fractal Noise. To add even more detail, Perlin Noise based Fractal Noise was also added. The Waves are calcualrted within a Vertex Shader. The sea foam is emulated by blending two colors based on the vertical component of the waves. <br /> <br /> The plane is a ["Stylized Ww1 Plane"](https://skfb.ly/o6xsH) by Sketchfab user cyberdan and is licensed under [Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/). <br /> <br /> The animations for the plane were done by interpolating the plane towards the mouse using a simple lerp function. The roll and pitch were done using a modified lerp function. The clouds were also procedurally generated. A wake appears when the plane is close to the surface. The particles are instanced meshes and require only 1 draw call. <br /> <br /> ![banner](./Assets/banner.jpg)'
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" playing="false">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, minimal-ui, viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
-    <title>Faraz Shaikh | Ocean Breeze</title>
     <link href="../demos.css" rel="stylesheet" />
     <style>
       body {
         background: linear-gradient(#e4e0ba, #f7d9aa);
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-      }
-      .Info {
-        color: black;
-        width: fit-content;
       }
     </style>
     <script>
@@ -40,17 +35,7 @@ langs: GLSL JavaScript
       }
     </script>
   </head>
-  <body type="0">
-    <div class="Info">
-      Ocean breeze - by
-      <a href="https://github.com/FarazzShaikh">Faraz Shaikh</a>
-      <div style="font-size: x-small; margin: 2px">Inspired by Studio Ghibli's movie - Porco Rosso</div>
-    </div>
+  <body>
     <script type="module" src="./main.js" defer></script>
-    <div class="Info" style="position: absolute; bottom: 0; left: 0; font-size: x-small; margin: 2px">
-      <a href="https://skfb.ly/6ZS9C">"Stylized Ww1 Plane"</a>
-      by Sketchfab user cyberdan is licensed under
-      <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution.</a>
-    </div>
   </body>
 </html>

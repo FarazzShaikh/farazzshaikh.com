@@ -1,30 +1,20 @@
 ---
+layout: demo
 title: Planet Generator
 disc: Generate random planets using procedural noise.
 tags: GPU WebGL
 langs: GLSL JavaScript
+info:
+  - "This project is a simple demo of what can be created using my library [gl-Noise](https://github.com/FarazzShaikh/glNoise). It uses Farctal Noise made by layering multiple layers of Simplex Noise together. The reuslt is masked by an aditional layer of perlin noise to give the continents a smooth falloff into the ocean. The water is made by setting the height of the sphere to a constant. The terrain is generated in a VErtex Shader. <br /><br /> The colors are generated in the Fragment Shader where each pixel gets a color depending on its vertical position. This verticle position is passed in from the Vertex Shader. <br /><br />  ![banner](./Assets/banner.jpg)"
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" playing="false">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, minimal-ui, viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
-    <title>Faraz Shaikh | Planets</title>
     <link href="../demos.css" rel="stylesheet" />
-    <style>
-      body {
-        background-color: #131313;
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-      }
-      .Info {
-        color: white;
-        width: fit-content;
-      }
-    </style>
     <script>
       const s = webgl_support();
       if (!s) {
@@ -40,11 +30,7 @@ langs: GLSL JavaScript
       }
     </script>
   </head>
-  <body type="0">
-    <div class="Info">
-      Randomized Planets - by
-      <a href="https://github.com/FarazzShaikh">Faraz Shaikh</a>
-    </div>
+  <body>
     <script type="module" src="./main.js" defer></script>
   </body>
 </html>

@@ -163,18 +163,9 @@ loadShaders(paths).then(([fragment, vertex]) => {
 
   const stats = new Stats();
   stats.showPanel(0);
-  const h = stats.dom.children[0].height;
-
-  stats.dom.style.cssText = `
-    position: fixed;
-    bottom: ${h / 2}px;
-    left: 0px;
-    cursor: pointer;
-    opacity: 0.9;
-    z-index: 10000;
-      `;
   document.body.appendChild(stats.dom);
 
+  let ID;
   const animate = function () {
     stats.begin();
 
@@ -187,8 +178,31 @@ loadShaders(paths).then(([fragment, vertex]) => {
     }
 
     stats.end();
-    requestAnimationFrame(animate);
+    ID = requestAnimationFrame(animate);
   };
 
   animate();
+
+  const html = document.querySelector("html");
+  let playing = html.getAttribute("playing") || "false";
+
+  if (playing === "false") {
+    cancelAnimationFrame(ID);
+  } else {
+    requestAnimationFrame(animate);
+  }
+
+  const observer = new MutationObserver(function (mutations) {
+    playing = html.getAttribute("playing") || "false";
+
+    if (playing === "false") {
+      cancelAnimationFrame(ID);
+    } else {
+      requestAnimationFrame(animate);
+    }
+  });
+
+  observer.observe(html, {
+    attributes: true, //configure it to listen to attribute changes
+  });
 });

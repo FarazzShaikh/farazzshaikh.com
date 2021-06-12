@@ -22,10 +22,11 @@
     <meta name="x-build-time" content="{{ site.time | date_to_rfc822 }}" />
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
     <link rel="alternate" type="application/rss+xml" title="Faraz Shaikh's blog" href="https://farazzshaikh.medium.com/" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👻</text></svg>" />
-    <link rel="stylesheet" href="{{ '/main.css' | relative_url }}" />
+
+    <link id="bulma" rel="stylesheet" href="{{ '/main.css' | relative_url }}" />
+
     <script type="module" src="{{ '/main.js' | relative_url }}"></script>
     <script src="{{ '/lib/timeago.min.js' | relative_url }}"></script>
   </head>

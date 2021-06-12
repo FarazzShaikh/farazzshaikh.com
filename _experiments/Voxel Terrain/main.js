@@ -90,43 +90,70 @@ function genCubes(scene) {
   }
 
   mesh.instanceMatrix.needsUpdate = true;
-  console.log(mesh);
 }
 
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+setTimeout(() => {
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-const renderer = new THREE.WebGLRenderer({
-  antialias: true,
-  alpha: true,
-});
-renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.shadowMap.enabled = true;
-renderer.shadowMap.type = THREE.PCFSoftShadowMap; // default THREE.PCFShadowMap
-document.body.appendChild(renderer.domElement);
+  const renderer = new THREE.WebGLRenderer({
+    antialias: true,
+    alpha: true,
+  });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap; // default THREE.PCFShadowMap
+  document.body.appendChild(renderer.domElement);
 
-const effect = new OutlineEffect(renderer);
+  const effect = new OutlineEffect(renderer);
 
-const controls = new OrbitControls(camera, renderer.domElement);
+  const controls = new OrbitControls(camera, renderer.domElement);
 
-camera.position.set(45, 45, 45);
+  camera.position.set(45, 45, 45);
 
-const gridHelper = new THREE.GridHelper(60, 20);
-scene.add(gridHelper);
+  const gridHelper = new THREE.GridHelper(60, 20);
+  scene.add(gridHelper);
 
-const alight = new THREE.AmbientLight(0x404040);
-scene.add(alight);
+  const alight = new THREE.AmbientLight(0x404040);
+  scene.add(alight);
 
-const light = new THREE.DirectionalLight(0xffffff, 0.7);
-light.position.set(30, 20, 10);
-scene.add(light);
+  const light = new THREE.DirectionalLight(0xffffff, 0.7);
+  light.position.set(30, 20, 10);
+  scene.add(light);
 
-genCubes(scene);
+  genCubes(scene);
 
-const animate = function (dt) {
-  requestAnimationFrame(animate);
-  controls.update();
-  effect.render(scene, camera);
-};
+  let ID;
+  const animate = function (dt) {
+    console.log("A");
+    effect.render(scene, camera);
 
-animate();
+    controls.update();
+    ID = requestAnimationFrame(animate);
+  };
+
+  animate();
+
+  const html = document.querySelector("html");
+  let playing = html.getAttribute("playing") || "false";
+
+  if (playing === "false") {
+    cancelAnimationFrame(ID);
+  } else {
+    requestAnimationFrame(animate);
+  }
+
+  const observer = new MutationObserver(function (mutations) {
+    playing = html.getAttribute("playing") || "false";
+
+    if (playing === "false") {
+      cancelAnimationFrame(ID);
+    } else {
+      requestAnimationFrame(animate);
+    }
+  });
+
+  observer.observe(html, {
+    attributes: true, //configure it to listen to attribute changes
+  });
+}, 1000);

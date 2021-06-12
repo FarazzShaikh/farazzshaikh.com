@@ -13,4 +13,4 @@ burger.addEventListener("click", () => {
 });
 
 // Higlight active nav menu item
-dom.select(`.navbar-menu a[href$="${window.location.pathname}"]`).classList.add("is-active");
+// dom.select(`.navbar-menu a[href$="${window.location.pathname}"]`).classList.add("is-active");

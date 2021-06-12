@@ -50,6 +50,11 @@ body {
     font-family: sans-serif;
     font-weight: 700;
     font-size: 14px;
+    background-color: #131313;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
 }
 
 .Side {
@@ -72,19 +77,6 @@ body {
     width: calc(100% - 300px);
     border: none;
     margin: 0;
-}
-.Title {
-    font-size: 18px;
-    margin: 20px 0;
-    display: block;
-    font-weight: lighter;
-    display: flex;
-    align-items: center;
-}
-
-.Title img {
-    width: 40px;
-    height: 40px;
 }
 
 .SubTitle {
@@ -168,6 +160,8 @@ body {
     padding: 20px;
     position: relative;
     z-index: 1;
+    color: white;
+    width: fit-content;
 }
 .Info a {
     color: rgb(39, 147, 235);
@@ -184,3 +178,28 @@ canvas {
 select {
     color: white
 }
+
+.blur {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    cursor: pointer;
+}
+
+.blur h3 {
+    width: 80%;
+    text-align: center;
+}
+
+.blur svg {
+    width: 80%;
+    max-width: 128px;
+    transition: transform 300ms ease-in-out;
+}
+
+.blur:hover > svg {
+    transform: scale(1.3);
+}
+
