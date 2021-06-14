@@ -5,6 +5,11 @@ layout: default
 <section class="Demo-View">
   <section class="ThreeD-View">
     <div class="ThreeD-container">
+      {% if page.extern %}
+      <script>
+        window.location.replace("{{page.extern | json}}");
+      </script>
+      {% endif %}
       <iframe scrolling="no" seamless> </iframe>
       <script defer>
         const escape = document.createElement("textarea");
