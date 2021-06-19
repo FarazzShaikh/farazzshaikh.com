@@ -25,10 +25,32 @@
 
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👻</text></svg>" />
 
-    <link id="bulma" rel="stylesheet" href="{{ '/main.css' | relative_url }}" />
+    <link id="bulma" rel="stylesheet" href="/main.css" />
 
     <script type="module" src="{{ '/main.js' | relative_url }}"></script>
     <script src="{{ '/lib/timeago.min.js' | relative_url }}"></script>
+    <script>
+      console.log(`
+    .__________________________.
+    | .___________________. |==|
+    | | Hello,            | |  |
+    | |   fellow dev!     | |  |
+    | |                   | |  |
+    | | Found something   | |  |
+    | | wrong? Email me!  | |  |
+    | |                   | |  |
+    | | farazzshaikh      | |  |
+    | |        @gmail.com | | ,|
+    | !___________________! |(c|
+    !_______________________!__!
+   /                            \\
+  /  [][][][][][][][][][][][][]  \\
+ /  [][][][][][][][][][][][][][]  \\
+(  [][][][][____________][][][][]  )
+ \\ ------------------------------ /
+  \\______________________________/
+        `);
+    </script>
   </head>
   <body>
     <section class="hero">
@@ -39,7 +61,7 @@
               {% if page.url == '/' %}
               <a id="unicorn-btn" class="navbar-item no-dark-mode" href="https://sindresorhus.com/unicorn" title="Click me!">👻</a>
               {% else %}
-              <span class="navbar-item">Faraz Shaikh</span>
+              <a href="{% link index.html %}" class="navbar-item">Faraz Shaikh</a>
               {% endif %}
               <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
                 <span aria-hidden="true"></span>
@@ -47,9 +69,11 @@
                 <span aria-hidden="true"></span>
               </a>
             </div>
-            <div class="navbar-menu">
+            <div class="navbar-menu is-fixed-top">
               <div class="navbar-end">
+                {% if page.url != '/' %}
                 <a class="navbar-item is-tab" href="{% link index.html %}">Home</a>
+                {% endif %}
                 <a class="navbar-item is-tab" href="{% link pages/apps.html %}">Apps</a>
                 <a class="navbar-item is-tab" href="{% link pages/libraries.html %}">Libraries</a>
                 <a class="navbar-item is-tab" href="{% link pages/experiments.html %}">Experiments</a>

@@ -2,42 +2,35 @@
 layout: default
 ---
 
-<section class="hero is-fullheight is-default">
-  <div id="info-container" class="container has-text-centered">
-    <div class="columns is-vcentered">
-      <div class="column is-two-thirds is-centered has-nice-link">
-        <div itemscope itemtype="https://schema.org/Person">
-          <img id="profile-pic" src="Assets/profile.jpg" width="160" height="160" itemprop="image" />
-          <h1 class="title is-2 m-0" itemprop="name">Faraz Shaikh</h1>
-          <h2 class="subtitle is-4 mb-3 mt-1" itemprop="description">Open-Source Developer</h2>
-          <div class="langs"></div>
-          <p class="mt-3">I create WebGL and NodeJS libraries, Procedural generation tools, CLIs, Games and whatever I find intresting.</p>
-        </div>
+<link rel="stylesheet" href="/pages/index/index.css" />
+
+<section class="scroll-container">
+  <section id="page-1" class="index hero is-fullheight is-default">
+    <div class="has-text-centered Info-container">
+      <div class="heading-container">
+        <img id="profile-pic" src="Assets/profile.jpg" width="160" height="160" itemprop="image" />
+        <h1 class="title is-2 m-0" itemprop="name">Faraz Shaikh</h1>
+        <h2 class="subtitle is-4 mb-3 mt-1" itemprop="description">Open-Source Developer</h2>
+        <div class="langs"></div>
+        <p>I make Libraries, CLIs, Games and Demos.</p>
+      </div>
+
+      <div>
+        <p></p>
         <br />
-        <p class="has-text-centered">
-          <a class="button is-large is-white" href="https://farazzshaikh.medium.com/">
+        <p class="has-text-centered buttons">
+          <a class="button is-white" href="https://farazzshaikh.medium.com/" target="_blank">
             <span class="icon">
-              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="pen-fancy" class="svg-inline--fa fa-pen-fancy fa-w-16" role="img" viewBox="0 0 512 512">
+              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="pencil-alt" class="svg-inline--fa fa-pencil-alt fa-w-16" role="img" viewBox="0 0 512 512">
                 <path
                   fill="currentColor"
-                  d="M79.18 282.94a32.005 32.005 0 0 0-20.24 20.24L0 480l4.69 4.69 92.89-92.89c-.66-2.56-1.57-5.03-1.57-7.8 0-17.67 14.33-32 32-32s32 14.33 32 32-14.33 32-32 32c-2.77 0-5.24-.91-7.8-1.57l-92.89 92.89L32 512l176.82-58.94a31.983 31.983 0 0 0 20.24-20.24l33.07-84.07-98.88-98.88-84.07 33.07zM369.25 28.32L186.14 227.81l97.85 97.85 199.49-183.11C568.4 67.48 443.73-55.94 369.25 28.32z"
+                  d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"
                 />
               </svg>
             </span>
-            <span>Blog</span>
+            <span class="button-title"></span>
           </a>
-          <a class="button is-large is-white" href="https://github.com/FarazzShaikh">
-            <span class="icon">
-              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github fa-w-16" role="img" viewBox="0 0 496 512">
-                <path
-                  fill="currentColor"
-                  d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
-                />
-              </svg>
-            </span>
-            <span>Code</span>
-          </a>
-          <a class="button is-large is-white" href="https://www.linkedin.com/in/faraz-shaikh-811655166/">
+          <a class="button is-white" href="https://www.linkedin.com/in/faraz-shaikh-811655166/" target="_blank">
             <span class="icon">
               <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin" class="svg-inline--fa fa-linkedin fa-w-14" role="img" viewBox="0 0 448 512">
                 <path
@@ -46,130 +39,139 @@ layout: default
                 />
               </svg>
             </span>
-            <span>LinkedIn</span>
+            <span class="button-title"></span>
+          </a>
+          <a class="button is-white" href="https://github.com/FarazzShaikh" target="_blank">
+            <span class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github fa-w-16" role="img" viewBox="0 0 496 512">
+                <path
+                  fill="currentColor"
+                  d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+                />
+              </svg>
+            </span>
+            <span class="button-title"></span>
           </a>
         </p>
       </div>
-      <script>
-        (async () => {
-          const colors = await (await fetch("/colors.json")).json();
-          const langContainer = document.querySelector(".langs");
-
-          function brightnessByColor(color) {
-            var color = "" + color,
-              isHEX = color.indexOf("#") == 0,
-              isRGB = color.indexOf("rgb") == 0;
-            if (isHEX) {
-              const hasFullSpec = color.length == 7;
-              var m = color.substr(1).match(hasFullSpec ? /(\S{2})/g : /(\S{1})/g);
-              if (m)
-                var r = parseInt(m[0] + (hasFullSpec ? "" : m[0]), 16),
-                  g = parseInt(m[1] + (hasFullSpec ? "" : m[1]), 16),
-                  b = parseInt(m[2] + (hasFullSpec ? "" : m[2]), 16);
-            }
-            if (isRGB) {
-              var m = color.match(/(\d+){3}/g);
-              if (m)
-                var r = m[0],
-                  g = m[1],
-                  b = m[2];
-            }
-            if (typeof r != "undefined") return (r * 299 + g * 587 + b * 114) / 1000;
-          }
-
-          function createLangTags(langs, colors) {
-            return langs.map((l) => {
-              const color = colors[l] ? colors[l].color : null;
-              const textColor = brightnessByColor(color) < 150 && color ? "white" : "black";
-              return `
-                                <span class="tag is-small"
-                                    style="background-color: ${color || "#cccccc"}; color: ${textColor}"
-                                >${l}</span>
-                                `;
-            });
-          }
-
-          const langs = ["JavaScript", "TypeScript", "GLSL", "Shell", "HTML", "CSS", "Java", "C", "C++", "Assembly", "Python", "OCaml"];
-          langContainer.innerHTML = createLangTags(langs, colors).join("\n");
-        })();
-      </script>
     </div>
-  </div>
-</section>
-
-<section class="hero is-fullheight contributions">
-    <div  id="contributions"  class="hero-body container">
-      <div class="columns is-vcentered">
-        <div class="column has-text-centered">
-          <h4 class="title is-4" style="font-weight: 400">Latest commit</h4>
-          <div id="latest-commit">
-            <a class="commit-title nice-link" href=""></a>
-            <br />
-            <span style="font-size: 12px"> <span class="commit-date"></span> in <a class="repo-title" href=""></a> </span>
-          </div>
-          <br />
-          <a href="https://gitstalk.netlify.com/sindresorhus">Stalk me</a>
-        </div>
-        <div id="latest-repos-container" class="column is-three-fifths is-offset-1 has-nice-link">
-          <h2 class="title is-2">Latest repos</h2>
-          <template id="latest-repos-template">
-            <div class="column is-half">
-              <h4 class="title is-4">
-                <a class="latest-repos-title" href="">
-                </a>
-                <a class="tag is-small latest-repos-language">¯\_(ツ)_/¯</a>
-              </h4>
-              <p class="latest-repos-description"></p>
-            </div>
-          </template>
-          <div id="latest-repos" class="columns is-multiline"></div>
-        </div>
-      </div>
+    <div class="ThreeD-Container plane">
+      <canvas width="500" height="500"></canvas>
+    </div>
+    <div class="read-more">
+      <h1>Read More</h1>
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down" class="svg-inline--fa fa-angle-down fa-w-10" role="img" viewBox="0 0 320 512">
+        <path fill="currentColor" d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
+      </svg>
     </div>
   </section>
 
-  <script defer>
-    (async () => {
-      // const url = "https://api.github.com/search/issues?q=author:Farazzshaikh+-user:Farazzshaikh+is:pull-request";
-      const url = "/temp.json";
-      const data = await (await fetch(url)).json();
+  <section id="page-3" class="index hero is-fullheight is-default">
+    <div class="about-container">
+      <div class="sub-section">
+        <p>Hello! I am Faraz, a 20 year old Open-Source developer and student who loves to create just about anything fascinating, interesting, or fun.</p>
+        <br />
+        <p>Currently, I do Web Developement and 3D Graphics on the web. I love Procedural Generation and so, am working on many project related to it.</p>
+        <br />
+        <p class="subtitle is-6 has-text-weight-bold m-0 mb-2">Languages I speak</p>
+        <div class="langs"></div>
+        <p class="subtitle is-6 has-text-weight-bold m-0 mb-2">Technologies I use</p>
+        <div class="frameworks"></div>
+        <div class="read-more">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down" class="svg-inline--fa fa-angle-down fa-w-10" role="img" viewBox="0 0 320 512">
+            <path fill="currentColor" d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
+          </svg>
+        </div>
+      </div>
 
-      const unique = [];
-      let priv = "";
-      data.items.forEach((item) => {
-        if (priv !== item.repository_url) {
-          unique.push(item);
-          priv = item.repository_url;
-        }
-      });
+      <div class="sub-section">
+        <h1 class="title is-2 m-0" itemprop="name">Education</h1>
+        <h2 class="subtitle is-4 mb-3 mt-1" itemprop="description">
+          Heriot-Watt University
+          <span class="tag is-small">2019-present</span>
+        </h2>
+        <p class="subtitle is-6">Persuing a Bachelor of Science (BSc) in Computer Science at the Dubai Campus. Graduating in 2023.</p>
 
+        <h1 class="title is-2 m-0" itemprop="name">Experience</h1>
+        <h2 class="subtitle is-4 mb-3 mt-1" itemprop="description">
+          Newline – Course Author (Contract)
+          <span class="tag is-small">Feb 2021 - present</span>
+        </h2>
+        <p class="subtitle is-6">Authoring an audio-video course about ThreeJS and 3D Graphics on the web.</p>
 
-      const dom = {
-        select: document.querySelector.bind(document),
-        selectAll: document.querySelectorAll.bind(document),
-      };
+        <h2 class="subtitle is-4 mb-3 mt-1" itemprop="description">
+          Various Open-Source projects
+          <span class="tag is-small">2018 - present</span>
+        </h2>
+        <p class="subtitle is-6">Check them out by clicking the relavent links in the Nav Bar.</p>
 
-      const template = dom.select("#latest-repos-template");
-      const container = dom.select("#latest-repos");
+        <div class="read-more">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down" class="svg-inline--fa fa-angle-down fa-w-10" role="img" viewBox="0 0 320 512">
+            <path fill="currentColor" d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="ThreeD-Container particle">
+      <canvas width="500" height="500"> </canvas>
+    </div>
+  </section>
 
-        console.log(unique[0])
+  <section id="page-2" class="index hero is-fullheight is-default">
+    <template id="latest-repos-template">
+      <div class="column is-half-tablet is-half-desktop">
+        <h4 class="title is-4 mb-2">
+          <a class="latest-repos-title" href="" target="_blank"></a>
+        </h4>
+        <div class="tag is-small latest-repos-timeago"></div>
+        <p class="latest-repos-description is-size-7"></p>
+      </div>
+    </template>
 
-      for (let i = 0; i < 6 && i < unique.length; i++) {
-        const r = unique[i];
-        const content = template.cloneNode(true).content;
+    <template id="latest-repos-template2">
+      <div class="column p-0 pb-3">
+        <div>
+          <h4 class="title is-4 mb-2">
+            <a class="latest-repos-title" href="" target="_blank"></a>
+          </h4>
+          <div style="display: flex; align-items: center">
+            <div class="langs"></div>
+            <div class="tag is-small latest-repos-timeago"></div>
+          </div>
 
-        const a = content.querySelector(".latest-repos-title");
-        const own = content.querySelector(".latest-repos-owner")
-        a.href = r.html_url;
-        a.innerHTML = `
-        <div class="latest-repos-owner">${r.repository_url.split("/")[4]}/</div>${r.repository_url.split("/")[5]}
-        `
-        
-        content.querySelector(".latest-repos-description").textContent = r.title;
-        container.appendChild(document.importNode(content, true));
-      }
+          <p class="latest-repos-description is-size-7"></p>
+        </div>
+      </div>
+    </template>
 
-      dom.select("#contributions").style.opacity = 1;
-    })();
-  </script>
+    <div class="ThreeD-Container sub">
+      <canvas width="500" height="500"></canvas>
+    </div>
+
+    <div class="latest-container">
+      <div>
+        <h2 class="title is-2">Latest Repos</h2>
+        <div id="latest-commit"></div>
+      </div>
+
+      <br />
+      <div>
+        <h2 class="title is-4">Latest Commits</h2>
+        <div id="latest-repos" class="columns is-mobile is-multiline card-container is-vcentered"></div>
+      </div>
+    </div>
+
+    <div class="read-more">
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down" class="svg-inline--fa fa-angle-down fa-w-10" role="img" viewBox="0 0 320 512">
+        <path fill="currentColor" d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
+      </svg>
+    </div>
+  </section>
+
+  {% include footer.html %}
 </section>
+
+<!-- <script type="module" src="/pages/index/page1/main.js" defer></script> -->
+<!-- <script type="module" src="/pages/index/page2/main.js" defer></script> -->
+<!-- <script type="module" src="/pages/index/page3/main.js" defer></script> -->
+<script src="/pages/index/index.js" defer></script>

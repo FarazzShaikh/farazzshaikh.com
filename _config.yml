@@ -1,4 +1,7 @@
 title: Faraz Shaikh
+description: Open-Source Developer.
+baseurl: ""
+url: https://farazshaikh.com
 livereload: true
 collections:
   experiments:
@@ -17,5 +20,5 @@ collections:
     order:
       - Terrain Builder.md
 exclude:
-  - "About.*"
+  - "tmp/**/*"
 host: 0.0.0.0

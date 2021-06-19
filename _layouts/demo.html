@@ -81,8 +81,6 @@ layout: default
 
   <style>
     .Demo-View {
-      scroll-snap-type: mandatory;
-      scroll-snap-points-y: repeat(300px);
       scroll-snap-type: y mandatory;
       overflow: scroll;
       height: 100vh;
@@ -119,29 +117,6 @@ layout: default
       }
     }
 
-    .ThreeD-View .read-more {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 1em;
-      /* transform: translate(0%, -50%); */
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%);
-    }
-    .ThreeD-View .read-more svg {
-      animation: bounce 1s infinite;
-    }
-
-    @keyframes bounce {
-      from {
-        transform: translate(0%, 0%);
-      }
-      to {
-        transform: translate(0%, 25%);
-      }
-    }
-
     .Info-View {
       scroll-snap-align: start;
       width: 100%;
@@ -155,7 +130,7 @@ layout: default
 
     .Info-View .Info-container {
       width: 80%;
-      margin-bottom: 10%;
+      margin-bottom: 20%;
       text-align: justify;
     }
 

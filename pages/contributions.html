@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<section class="hero is-fullheight contributions">
+<section class="hero  contributions">
     <div  id="contributions" class="hero-body container">
       <div class="columns is-vcentered">
         <div id="latest-repos-container" class="column has-nice-link">
@@ -11,16 +11,12 @@ layout: default
           <br />
           <template id="latest-repos-template">
             <div class="column is-half column is-mobile is-half-tablet is-one-third-desktop">
-                <div class="box">
-                    <div>
-                        <h4 class="title is-4 mb-2">
-                            <a class="latest-repos-title" href="" target="_blank"></a>
-                            <div class="tag is-small latest-repos-language"></div>
-                          </h4>
-                          <div class="tag is-small latest-repos-timeago"></div>
-                    </div>
-                    <p class="latest-repos-description"></p>
-                </div>
+                    <h4 class="title is-4 mb-2">
+                        <a class="latest-repos-title" href="" target="_blank"></a>
+                        <div class="tag is-small latest-repos-language"></div>
+                    </h4>
+                    <div class="tag is-small latest-repos-timeago"></div>
+                <p class="latest-repos-description"></p>
             </div>
           </template>
           <div id="latest-repos" class="columns is-multiline card-container"></div>
@@ -109,7 +105,7 @@ layout: default
       const container = dom.select("#latest-repos");
 
 
-      for (let i = 0; i < 12 && i < unique.length; i++) {
+      for (let i = 0; i < 9 && i < unique.length; i++) {
         const r = unique[i];
         const content = template.cloneNode(true).content;
 
@@ -147,3 +143,5 @@ layout: default
     })();
   </script>
 </section>
+
+{% include footer.html %}

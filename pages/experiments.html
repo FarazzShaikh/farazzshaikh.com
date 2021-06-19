@@ -13,9 +13,9 @@ permalink: /experiments/
       <div class="column is-mobile is-half-tablet is-one-third-desktop">
         {% if experiment.extern %}
         <a href="{{experiment.extern}}" target="_blank">
-          {% else %}
-          <a href="{{experiment.title}}">
-          {% endif %}
+        {% else %}
+        <a href="{{experiment.title}}">
+        {% endif %}
           <div class="box" style="display: flex; justify-content: space-between; flex-direction: column">
             <figure class="image">
               <img src="/experiments/{{experiment.title}}/Assets/banner.jpg" width="1440" height="800" />
@@ -96,3 +96,5 @@ permalink: /experiments/
     </div>
   </div>
 </section>
+
+{% include footer.html %}
