@@ -6,9 +6,7 @@ varying vec3 vPosition;
 
 uniform bool isSub;
 
-// the function which defines the displacement
-
-float fbm(vec3 p, gln_tFBMOpts opts) {
+float fbm(vec2 p, gln_tFBMOpts opts) {
   p += (opts.seed * 100.0);
   float persistance = opts.persistance;
   float lacunarity = opts.lacunarity;
@@ -26,9 +24,15 @@ float fbm(vec3 p, gln_tFBMOpts opts) {
     if (i >= octaves)
       break;
 
-    vec3 p = p * frequency * opts.scale;
+    vec2 p = p * frequency * opts.scale;
 
     float noiseVal = gln_perlin(p);
+
+    if (terbulance)
+      noiseVal = abs(noiseVal);
+
+    if (ridge)
+      noiseVal = -1.0 * noiseVal;
 
     result += noiseVal * amplitude;
 
