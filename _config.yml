@@ -22,3 +22,4 @@ collections:
 exclude:
   - "tmp/**/*"
 host: 0.0.0.0
+google_analytics: G-5C1GFMMHFF
