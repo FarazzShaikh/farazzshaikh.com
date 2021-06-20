@@ -12,7 +12,7 @@ permalink: /apps/
       {% for app in site.apps %}
       <div class="column is-mobile is-half-tablet is-one-third-desktop">
         <a href="https://github.com/FarazzShaikh/{{app.repo}}" target="_blank">
-          <div class="box">
+          <div class="box" style="opacity: 0; transition: opacity 200ms ease-in">
             <figure class="image">
               <img src="/apps/Assets/{{app.title}}.jpg" width="1440" height="800" />
             </figure>
@@ -49,73 +49,13 @@ permalink: /apps/
           </div>
         </a>
       </div>
-      <script src="/lib/timeago.min.js" type="text/javascript"></script>
       <script type="module" defer>
+        import { createLangTags, getTimeSince, isDebug } from "/pages/utils.js";
+
         (async () => {
           const colors = await (await fetch("/colors.json")).json();
           const index = "{{ forloop.index }}";
           const langContainer = document.querySelectorAll(".card-container .langs")[index - 1];
-
-          function brightnessByColor(color) {
-            var color = "" + color,
-              isHEX = color.indexOf("#") == 0,
-              isRGB = color.indexOf("rgb") == 0;
-            if (isHEX) {
-              const hasFullSpec = color.length == 7;
-              var m = color.substr(1).match(hasFullSpec ? /(\S{2})/g : /(\S{1})/g);
-              if (m)
-                var r = parseInt(m[0] + (hasFullSpec ? "" : m[0]), 16),
-                  g = parseInt(m[1] + (hasFullSpec ? "" : m[1]), 16),
-                  b = parseInt(m[2] + (hasFullSpec ? "" : m[2]), 16);
-            }
-            if (isRGB) {
-              var m = color.match(/(\d+){3}/g);
-              if (m)
-                var r = m[0],
-                  g = m[1],
-                  b = m[2];
-            }
-            if (typeof r != "undefined") return (r * 299 + g * 587 + b * 114) / 1000;
-          }
-
-          function createLangTags(langs, colors) {
-            return langs.map((l) => {
-              const color = colors[l] ? colors[l].color : null;
-              const textColor = brightnessByColor(color) < 150 && color ? "white" : "black";
-              return `
-                                    <span class="tag is-small"
-                                        style="background-color: ${color || "#cccccc"}; color: ${textColor}"
-                                    >${l}</span>
-                                    `;
-            });
-          }
-
-          function getTimeSince(date) {
-            var seconds = Math.floor((new Date() - date) / 1000);
-
-            var interval = seconds / 31536000;
-
-            if (interval > 1) {
-              return Math.floor(interval) + " years";
-            }
-            interval = seconds / 2592000;
-            if (interval > 1) {
-              return Math.floor(interval) + " months";
-            }
-            interval = seconds / 86400;
-            if (interval > 1) {
-              return Math.floor(interval) + " days";
-            }
-            interval = seconds / 3600;
-            if (interval > 1) {
-              return Math.floor(interval) + " hours";
-            }
-            interval = seconds / 60;
-            if (interval > 1) {
-              return Math.floor(interval) + " minutes";
-            }
-            return Math.floor(seconds) + " seconds";
-          }
 
           const langs = "{{app.langs | json}}".split(" ");
           langContainer.innerHTML = createLangTags(langs, colors).join("\n");
@@ -125,7 +65,8 @@ permalink: /apps/
 
           let stars, time;
           try {
-            throw "A";
+            if (isDebug()) throw "Skipping GitHub API call. Using Local Data.";
+
             const repoName = "{{app.repo | json}}";
             if (repoName) {
               const author = "Farazzshaikh";
@@ -133,20 +74,30 @@ permalink: /apps/
               const urlTime = `https://api.github.com/repos/${author}/${repoName}/git/refs/heads/master`;
 
               const repo = await (await fetch(url)).json();
+
+              if (!repo) throw "Rate Limit reached.";
+
               stars = repo.stargazers_count;
 
               const ref = await (await fetch(urlTime)).json();
+              if (!ref.object) throw "Rate Limit reached.";
               const commit = await (await fetch(ref.object.url)).json();
+              if (!commit) throw "Rate Limit reached.";
               const date = new Date(commit.author.date).getTime();
-              time = getTimeSince(date);
+              time = date;
             }
           } catch (error) {
             console.error(error);
-            stars = "300";
           }
 
-          eStarts.innerHTML = `★ ${stars || "-"}`;
-          eTime.innerHTML = `Updated ${time || getTimeSince(new Date(1623441628000))}`;
+          if (Date.now() - time <= 8.64e7 * 2) {
+            eTime.style.backgroundColor = "#70fb70";
+          }
+
+          eStarts.innerHTML = `★ ${stars || "---"}`;
+          eTime.innerHTML = `Updated ${getTimeSince(time) || "---"}`;
+
+          document.querySelectorAll(".box")[index - 1].style.opacity = 1;
         })();
       </script>
       {% endfor %}

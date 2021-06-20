@@ -1,34 +1,64 @@
 ---
 layout: default
+permalink: /contributions/
 ---
 
-<section class="hero  contributions">
-    <div  id="contributions" class="hero-body container">
-      <div class="columns is-vcentered">
-        <div id="latest-repos-container" class="column has-nice-link">
-          <h2 class="title is-2">Latest contributions</h2>
-          <p>Other open-source projects I have contributed to.</p>
-          <br />
-          <template id="latest-repos-template">
-            <div class="column is-half column is-mobile is-half-tablet is-one-third-desktop">
-                    <h4 class="title is-4 mb-2">
-                        <a class="latest-repos-title" href="" target="_blank"></a>
-                        <div class="tag is-small latest-repos-language"></div>
-                    </h4>
-                    <div class="tag is-small latest-repos-timeago"></div>
-                <p class="latest-repos-description"></p>
-            </div>
-          </template>
-          <div id="latest-repos" class="columns is-multiline card-container"></div>
+<section class="hero section contributions">
+    <template id="latest-repos-template">
+        <div class="column is-mobile is-half-tablet is-one-third-desktop">
+          <h4 class="title is-4 mb-2">
+            <a class="latest-repos-title" href="" target="_blank"></a>
+          </h4>
+          <div style="display: flex; justify-content: flex-start; align-items: center; margin: 5px 0px;">
+            <div class="latest-repos-language"></div>
+            <div class="tag is-small latest-repos-timeago"></div>
+          </div>
+         
+          <p class="latest-repos-description"></p>
+          
+        </div>
+      </template>
+      
+      <div class="container">
+        <h2 class="title is-2">Contributions</h2>
+        <p>Various other Open-Source projects I have contributed to.</p>
+        <div class="warning-tag-container">
+        </div>
+        <br />
+        <div class="columns is-mobile is-multiline is-vcentered latest-container">
         </div>
       </div>
-    </div>
+     
+      <style>
+          .container .column {
+            opacity: 0; 
+            transition: opacity 200ms ease-in
+          }
+      </style>
+
   </section>
-  <script defer>
+  <script type="module" defer>
+    import { createLangTags, getTimeSince, isDebug } from "/pages/utils.js";
+
     (async () => {
-      // const url = "https://api.github.com/search/issues?q=author:Farazzshaikh+-user:Farazzshaikh+is:pull-request";
-      const url = "/temp.json";
-      const data = await (await fetch(url)).json();
+        let url;
+
+        if (isDebug())  url = "/temp.json";
+        else url = "https://api.github.com/search/issues?q=author:Farazzshaikh+-user:Farazzshaikh+is:pull-request";
+ 
+        let data
+        try {
+            data = await (await fetch(url)).json();
+            if (!data.items) throw "Rate Limit reached. Using local data.";
+        } catch (error) {
+            console.error(error)
+            data = await (await fetch("/temp.json")).json();
+
+            document.querySelector(".container .warning-tag-container").innerHTML = `
+            <p class="tag warning" style="background-color: #cccc06;">GitHub API rate limit exceeded. Using cached data.</p>
+            `
+        }
+      
 
       const unique = [];
       let c = 0;
@@ -46,90 +76,44 @@ layout: default
         }
       });
 
-      function getTimeSince(date) {
-            var seconds = Math.floor((new Date() - date) / 1000);
-
-            var interval = seconds / 31536000;
-
-            if (interval > 1) {
-              return Math.floor(interval) + " years";
-            }
-            interval = seconds / 2592000;
-            if (interval > 1) {
-              return Math.floor(interval) + " months";
-            }
-            interval = seconds / 86400;
-            if (interval > 1) {
-              return Math.floor(interval) + " days";
-            }
-            interval = seconds / 3600;
-            if (interval > 1) {
-              return Math.floor(interval) + " hours";
-            }
-            interval = seconds / 60;
-            if (interval > 1) {
-              return Math.floor(interval) + " minutes";
-            }
-            return Math.floor(seconds) + " seconds";
-          }
-
-      function brightnessByColor(color) {
-            var color = "" + color,
-              isHEX = color.indexOf("#") == 0,
-              isRGB = color.indexOf("rgb") == 0;
-            if (isHEX) {
-              const hasFullSpec = color.length == 7;
-              var m = color.substr(1).match(hasFullSpec ? /(\S{2})/g : /(\S{1})/g);
-              if (m)
-                var r = parseInt(m[0] + (hasFullSpec ? "" : m[0]), 16),
-                  g = parseInt(m[1] + (hasFullSpec ? "" : m[1]), 16),
-                  b = parseInt(m[2] + (hasFullSpec ? "" : m[2]), 16);
-            }
-            if (isRGB) {
-              var m = color.match(/(\d+){3}/g);
-              if (m)
-                var r = m[0],
-                  g = m[1],
-                  b = m[2];
-            }
-            if (typeof r != "undefined") return (r * 299 + g * 587 + b * 114) / 1000;
-          }
-
       const colors = await (await fetch("/colors.json")).json();
       const dom = {
         select: document.querySelector.bind(document),
         selectAll: document.querySelectorAll.bind(document),
       };
 
-      const template = dom.select("#latest-repos-template");
-      const container = dom.select("#latest-repos");
-
+    
+    let template = dom.select("#latest-repos-template");
+    let container = dom.select(".latest-container");
 
       for (let i = 0; i < 9 && i < unique.length; i++) {
         const r = unique[i];
         const content = template.cloneNode(true).content;
 
-        const a = content.querySelector(".latest-repos-title");
-        const own = content.querySelector(".latest-repos-owner")
-        a.href = r.html_url;
-        a.innerHTML = `
-        <div class="latest-repos-owner">${r.repository_url.split("/")[4]}/</div>${r.repository_url.split("/")[5]}
+        const title = content.querySelector(".latest-repos-title");
+        const owner = content.querySelector(".latest-repos-owner")
+
+        title.href = r.html_url;
+        title.innerHTML = `
+        <div class="latest-repos-owner is-size-7">${r.repository_url.split("/")[4]}/</div>${r.repository_url.split("/")[5]}
         `
 
         let lang, color
         try {
-            throw "A"
+            if (isDebug()) throw "Skipping GitHub API call. Using Local Data.";
             lang = (await (await fetch(r.repository_url)).json()).language
+
+            if (!lang) throw "Rate Limit reached.";
+
             color = colors[lang].color
         } catch (error) {
-            lang = "-"
+            console.error(error)
+            lang = "---"
             color = colors[Object.keys(colors)[Math.floor(Math.random() * 20)]].color
         }
 
         const eLang = content.querySelector('.latest-repos-language');
-        eLang.textContent = lang
-        eLang.style.color = brightnessByColor(color) < 150 && color ? "white" : "black";
-        eLang.style.backgroundColor = color;
+        eLang.innerHTML = createLangTags([lang], colors, false, isDebug()).join("\n");
 
         const eTime = content.querySelector(".latest-repos-timeago")
         const date = new Date(r.closed_at)
@@ -137,9 +121,15 @@ layout: default
         
         content.querySelector(".latest-repos-description").textContent = r.title;
         container.appendChild(document.importNode(content, true));
+
+        setTimeout(() => {
+            document.querySelectorAll(".container .column")[i].style.opacity = 1;
+        }, 100);
+        
+
       }
 
-      dom.select("#contributions").style.opacity = 1;
+
     })();
   </script>
 </section>

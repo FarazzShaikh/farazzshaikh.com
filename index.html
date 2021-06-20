@@ -74,9 +74,9 @@ layout: default
         <p>Currently, I do Web Developement and 3D Graphics on the web. I love Procedural Generation and so, am working on many project related to it.</p>
         <br />
         <p class="subtitle is-6 has-text-weight-bold m-0 mb-2">Languages I speak</p>
-        <div class="langs"></div>
+        <div class="ts langs"></div>
         <p class="subtitle is-6 has-text-weight-bold m-0 mb-2">Technologies I use</p>
-        <div class="frameworks"></div>
+        <div class="ts frameworks"></div>
         <div class="read-more">
           <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down" class="svg-inline--fa fa-angle-down fa-w-10" role="img" viewBox="0 0 320 512">
             <path fill="currentColor" d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
@@ -151,6 +151,7 @@ layout: default
     <div class="latest-container">
       <div>
         <h2 class="title is-2">Latest Repos</h2>
+        <div class="warning-tag-container"></div>
         <div id="latest-commit"></div>
       </div>
 
@@ -171,7 +172,7 @@ layout: default
   {% include footer.html %}
 </section>
 
-<!-- <script type="module" src="/pages/index/page1/main.js" defer></script> -->
-<!-- <script type="module" src="/pages/index/page2/main.js" defer></script> -->
-<!-- <script type="module" src="/pages/index/page3/main.js" defer></script> -->
-<script src="/pages/index/index.js" defer></script>
+<script type="module" src="/pages/index/page1/main.js" defer></script>
+<script type="module" src="/pages/index/page2/main.js" defer></script>
+<script type="module" src="/pages/index/page3/main.js" defer></script>
+<script src="/pages/index/index.js" type="module" defer></script>

@@ -4,12 +4,12 @@
     align-items: center;
     flex-direction: row;
     scroll-snap-stop: always;
-    
 }
 
 .index {
     background-color: #f9f9f9;
     scroll-snap-align: start;
+    position: relative;
 }
 
 .ThreeD-Container.plane {
@@ -20,7 +20,7 @@
 .ThreeD-Container.plane canvas {
     height: 100%;
     width: 100%;
-    background: radial-gradient(circle, hsl(37, 25%, 20%) 30%, hsl(0, 0%, 0%) 60%);
+    background: radial-gradient(circle, #403626 20%, #000000 50%);
 }
 
 #page-1 .Info-container {
@@ -66,6 +66,7 @@
 #page-2 .latest-container {
     width: 50vw;
     height: 100%;
+    background-color: transparent;
 }
 
 .ThreeD-Container.sub {
@@ -90,6 +91,7 @@
     height: 100%;
    
     z-index: 100;
+    background-color: transparent;
 }
 
 #page-3 .about-container .sub-section {
@@ -101,6 +103,11 @@
     height: 100vh;
     scroll-snap-align: start;
     scroll-snap-stop: always;
+}
+
+#page-3 .about-container .sub-section p,
+#page-3 .about-container .sub-section .ts {
+    text-align: justify;
 }
 
 #page-3 .about-container .sub-section .read-more {
@@ -121,7 +128,7 @@
 .ThreeD-Container.particle canvas {
     height: 100vh;
     width: 100%;
-    background: radial-gradient(circle, #3a3333 20%, #00000000 60%);
+    background: radial-gradient(circle, #3a3333 20%, #000000 50%);
 }
 
 @media only screen and (max-width: 1024px) {
