@@ -23,24 +23,25 @@ export default function waves(scene, mobile) {
       ${Common}
       varying vec3 vPosition;
 
-      vec3 calcColor() {
+      vec4 calcColor() {
 
-      vec3 diffuseColor;
+        vec4 diffuseColor;
 
-      float mask;
-      mask = mix(0.0, 1.0, gln_map(vPosition.z, -5.0, 5.0, 0.0, 1.0));
-      mask = pow(mask, 8.0);
+        float mask;
+        mask = mix(0.0, 1.0, gln_map(vPosition.z, -5.0, 5.0, 0.0, 1.0));
+        mask = pow(mask, 8.0);
 
-      diffuseColor =vec3(0.941,0.894,0.843);
+        diffuseColor = vec4(1.,0.929,0.851,1.);
 
-      diffuseColor *= mask ;
+        diffuseColor.rgb *= mask * 0.65;
+        diffuseColor.a *= mask;
 
-      return diffuseColor;
+        return diffuseColor;
       }
 
       `,
       main: `
-      vec4 newColor = vec4(calcColor(), 1.0);
+      vec4 newColor = calcColor();
       `,
     },
     uniforms: {},

@@ -118,10 +118,10 @@ loadShadersCSM(v, [Common, Simplex]).then(({ defines, header, main }) => {
     //   vec4 newColor = vec4(mix(vec3(0.988,0.82,0.82), vec3(0.69,0.965,1.), vnoise.g + vnoise.r + vnoise.b), 1.0);
 
     vec3 hsv = rgb2hsv(vnoise);
-    hsv.b *= isDark;
     vec3 reg = hsv2rgb(hsv);
 
     vec4 newColor = vec4(reg, 1.0);
+    newColor.a *= isDark;
         `,
     },
     uniforms: {

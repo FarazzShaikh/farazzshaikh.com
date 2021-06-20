@@ -1,3 +1,3 @@
 
 
-vec4 newColor = vec4(calcColor(), 1.0);
+vec4 newColor = calcColor();

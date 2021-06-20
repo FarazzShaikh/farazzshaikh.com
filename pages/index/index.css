@@ -131,6 +131,7 @@
     background: radial-gradient(circle, #3a3333 20%, #000000 50%);
 }
 
+
 @media only screen and (max-width: 1024px) {
     #page-1 {
         display: block;
@@ -220,4 +221,20 @@
         display: none;
     }
     
+}
+
+
+@media (prefers-color-scheme: light) {
+	
+    .ThreeD-Container.plane canvas {
+        background: radial-gradient(circle, #ffdba2 20%, #f9f9f9 50%);
+    }
+
+    .ThreeD-Container.sub canvas {
+        background: radial-gradient(circle, #a6d2ff 20%, #f9f9f9 50%);
+    }
+
+    .ThreeD-Container.particle canvas {
+        background: radial-gradient(circle, #ffdada 20%, #f9f9f9 50%);
+    }
 }

@@ -3,9 +3,9 @@ varying vec3 vPosition;
 
 uniform bool isSub;
 
-vec3 calcColor() {
+vec4 calcColor() {
 
-  vec3 diffuseColor;
+  vec4 diffuseColor;
 
   float mask;
 
@@ -17,15 +17,18 @@ vec3 calcColor() {
 
   mask = pow(mask, 6.0);
 
+  vec3 col;
+
   if (isSub) {
-    diffuseColor =
-        mix(vec3(0., 0.314, 0.612), vec3(0., 0.51, 0.71), vHeight * 2.3 * mask);
-    diffuseColor *= mask * 0.5;
+    diffuseColor = mix(vec4(0., 0.314, 0.612, 1.), vec4(0., 0.51, 0.71, 1.),
+                       vHeight * 2.3 * mask);
   } else {
-    diffuseColor =
-        mix(vec3(0., 0.514, 1.), vec3(0.549, 0.871, 1.), vHeight * 2.3 * mask);
-    diffuseColor *= mask * 0.65;
+    diffuseColor = mix(vec4(0., 0.514, 1., 1.), vec4(0.549, 0.871, 1., 1.),
+                       vHeight * 2.3 * mask);
   }
+
+  diffuseColor.rgb *= mask * 0.65;
+  diffuseColor.a *= mask;
 
   return diffuseColor;
 }
