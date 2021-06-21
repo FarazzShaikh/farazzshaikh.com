@@ -6,6 +6,7 @@ tags: GPU WebGL
 langs: GLSL JavaScript
 info:
   - 'This is, once again, a demo for mt library [gl-Noise](https://github.com/FarazzShaikh/glNoise). It demostrates a procedual ocean made using Gerstner Waves. To produce detailed waves, many layers of varying Gerstner Waves were used akin to Fractal Noise. To add even more detail, Perlin Noise based Fractal Noise was also added. The Waves are calcualrted within a Vertex Shader. The sea foam is emulated by blending two colors based on the vertical component of the waves. <br /> <br /> The plane is a ["Stylized Ww1 Plane"](https://skfb.ly/o6xsH) by Sketchfab user cyberdan and is licensed under [Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/). <br /> <br /> The animations for the plane were done by interpolating the plane towards the mouse using a simple lerp function. The roll and pitch were done using a modified lerp function. The clouds were also procedurally generated. A wake appears when the plane is close to the surface. The particles are instanced meshes and require only 1 draw call. <br /> <br /> ![banner](./Assets/banner.jpg)'
+sitemap: false
 ---
 
 <!DOCTYPE html>

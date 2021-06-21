@@ -28,7 +28,13 @@ host: 0.0.0.0
 google_analytics: G-5C1GFMMHFF
 plugins:
   - jekyll-image-optim
+  - jekyll-minifier
+  - jekyll-sitemap
 image_optim:
   cache_file: "_image_optim_cache.yml"
   image_glob: "_*/**/*.{gif,png,jpg,jpeg}"
   archive_dir: "tmp/_image_optim_archive"
+jekyll-minifier:
+  compress_javascript: false
+  uglifier_args:
+    harmony: true
