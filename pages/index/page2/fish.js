@@ -29,7 +29,7 @@ export default function fish(scene) {
   let boidsGroup;
   loader.load(
     // resource URL
-    "assets/fish/scene.gltf",
+    "/Assets/fish/scene.gltf",
     // called when the resource is loaded
     function (gltf) {
       const o = gltf.scene;
