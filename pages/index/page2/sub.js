@@ -6,7 +6,7 @@ export default function sub(scene) {
   let sub, particles_anim;
   loader.load(
     // resource URL
-    "pages/index/Assets/sub/scene.gltf",
+    "assets/sub/scene.gltf",
     // called when the resource is loaded
     function (gltf) {
       const o = gltf.scene;

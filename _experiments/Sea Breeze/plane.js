@@ -14,7 +14,7 @@ export default function plane(scene) {
   let plane;
   loader.load(
     // resource URL
-    "./Assets/plane/scene.gltf",
+    "/assets/plane/scene.gltf",
     // called when the resource is loaded
     function (gltf) {
       plane = gltf.scene.children[0];
