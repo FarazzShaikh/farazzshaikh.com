@@ -1,0 +1,28 @@
+title: Faraz Shaikh
+description: Open-Source Developer.
+baseurl: ""
+url: https://farazshaikh.com
+livereload: true
+collections:
+  experiments:
+    output: true
+    order:
+      - Sea Breeze/index.html
+      - Planet Generator/index.html
+  libraries:
+    output: true
+    order:
+      - gl-Noise.md
+      - CSM.md
+      - three-noise.md
+  apps:
+    output: true
+    order:
+      - Terrain Builder.md
+exclude:
+  - "tmp/**/*"
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
+host: 0.0.0.0
+google_analytics: G-5C1GFMMHFF
