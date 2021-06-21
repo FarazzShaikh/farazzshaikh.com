@@ -95,6 +95,7 @@ PLATFORMS
   x86_64-darwin-20
 
 DEPENDENCIES
+  execjs
   jekyll
   jekyll-image-optim
   jekyll-minifier
