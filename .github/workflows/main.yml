@@ -12,7 +12,7 @@ jobs:
 
       - run: |
           sudo apt-get install nodejs
-          echo $'\ngem "therubyracer"' >> Gemfile
+          echo $'\ngem "therubyracer", :platforms => :ruby' >> Gemfile
 
       # Use GitHub Actions' cache to shorten build times and decrease load on servers
       - uses: actions/cache@v2
