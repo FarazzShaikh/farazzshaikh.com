@@ -3,3 +3,4 @@ _site
 .vscode
 tmp
 *_ignore
+.DS_Store
