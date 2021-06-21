@@ -10,9 +10,8 @@ jobs:
         with:
           submodules: "true"
 
-      - uses: actions/setup-node@v2
-        with:
-          node-version: "14"
+      - run: \
+          sudo apt-get install nodejs
 
       # Use GitHub Actions' cache to shorten build times and decrease load on servers
       - uses: actions/cache@v2
