@@ -11,7 +11,7 @@ jobs:
           submodules: "true"
 
       - run: |
-          echo "\ngem 'therubyracer'" >> Gemfile
+          echo '\ngem "therubyracer"' >> Gemfile
 
       # Use GitHub Actions' cache to shorten build times and decrease load on servers
       - uses: actions/cache@v2
