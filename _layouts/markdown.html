@@ -2,12 +2,29 @@
 layout: default
 ---
 
+<style>
+  .hero-body .column {
+    margin-bottom: 180px;
+  }
+  .hero-body .tagline {
+    font-size: 18px;
+    margin-top: 5px;
+  }
+  #self-photo {
+    margin-top: 30px;
+    margin-left: 30px;
+    border-radius: 50%;
+    width: 130px;
+  }
+</style>
+
 <section class="hero is-fullheight is-default">
   <div class="hero-body">
     <div class="container">
       <div class="columns is-vcentered is-centered is-text-centered">
-        <div class="column is-half is-narrow content">{{ content }}</div>
+        <div class="column is-two-thirds is-text-justified content">{{ content }}</div>
       </div>
     </div>
   </div>
+  {% include footer.html %}
 </section>

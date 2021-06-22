@@ -6,6 +6,14 @@
     scroll-snap-stop: always;
 }
 
+.nogl:not(#page-3.nogl) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
 .index {
     background-color: #f9f9f9;
     scroll-snap-align: start;
@@ -129,6 +137,20 @@
     height: 100vh;
     width: 100%;
     background: radial-gradient(circle, #3a3333 20%, #000000 50%);
+}
+
+.warning-container {
+    width: 100vw;
+    background-color: #ffa8a8;
+    z-index: 10000;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    left: 0;
+    padding: 0.2em;
+    text-align: center;
+    font-weight: bold;
+    display: none;
 }
 
 
