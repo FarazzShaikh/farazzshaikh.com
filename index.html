@@ -175,6 +175,19 @@ layout: default
 <script type="module" defer>
   import { fps } from "/pages/index/fps.js";
 
+  const gl = webgl_support();
+  if (!gl) {
+    window.location.replace("/reader/");
+  }
+  function webgl_support() {
+    try {
+      var canvas = document.createElement("canvas");
+      return !!window.WebGLRenderingContext && (canvas.getContext("webgl") || canvas.getContext("experimental-webgl"));
+    } catch (e) {
+      return false;
+    }
+  }
+
   const s = document.querySelector(".warning-container");
   setInterval(() => {
     if (fps.value <= 30) {
