@@ -1,0 +1,55 @@
+{
+    "exp": [
+        {
+            "title": "Newline.co – Course Author",
+            "disc": "Authoring an audio-video course about ThreeJS and 3D Graphics on the web.",
+            "start": "Feburary 2021",
+            "end": "present"
+        }
+    ],
+
+    "projects": [
+        {
+            "title": "Personal Site (farazshaikh.com)",
+            "disc": "Created my personal webpage utilizing Jekyll and ThreeJS with over 400 hits on Reddit.",
+            "start": "June 2021",
+            "link": {
+                "text": "Visit farazshaikh.com",
+                "href": "https://farazshaikh.com/"
+            },
+            "repo": "https://github.com/FarazzShaikh/farazshaikh.com"
+        },
+        {
+            "title": "Terrain Builder",
+            "disc": "Procedural terrain and height-map generator using Three.js and perlin noise accelerated by the GPU. 1,000+ hits on Reddit; 200+ Stars on GitHub.",
+            "start": "March 2020",
+            "link": {
+                "text": "Visit farazshaikh.com",
+                "href": "https://terrain-builder.herokuapp.com/"
+            },
+            "repo": "https://github.com/FarazzShaikh/Terrain-Builder"
+        },
+        {
+            "title": "Various Libraries",
+            "disc": "Many open-source libraries from Web Developement to Computer Graphics developement used by 100s of people.",
+            "start": "2019",
+            "end": "present",
+            "link": {
+                "text": "See my libraries",
+                "href": "https://farazshaikh.com/libraries/"
+            },
+            "repo": "https://github.com/FarazzShaikh"
+        },
+        {
+            "title": "Various Demos",
+            "disc": "Many open-source demos for my various libraries and some just for fun with over 5,000 hits on Reddit.",
+            "start": "2020",
+            "end": "present",
+            "link": {
+                "text": "See my demos",
+                "href": "https://farazshaikh.com/experiments/"
+            },
+            "repo": "https://github.com/FarazzShaikh"
+        }
+    ]
+}

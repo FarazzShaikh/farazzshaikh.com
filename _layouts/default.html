@@ -27,6 +27,17 @@
 
     <link id="bulma" rel="stylesheet" href="/main.css" />
 
+    <style type="text/css" media="print">
+      .no-print {
+        display: none;
+      }
+
+      @page {
+        size: auto; /* auto is the initial value */
+        margin: 0mm; /* this affects the margin in the printer settings */
+      }
+    </style>
+
     <script type="module" src="{{ '/main.js' | relative_url }}"></script>
     <script src="{{ '/lib/timeago.min.js' | relative_url }}"></script>
     <script>
@@ -54,7 +65,7 @@
     {% if site.google_analytics and jekyll.environment == 'production' %} {% include analytics.html %} {% endif %}
   </head>
   <body>
-    <div class="hero-head" style="position: sticky; position: -webkit-sticky; top: 0; z-index: 1000">
+    <div class="hero-head no-print" style="position: sticky; position: -webkit-sticky; top: 0; z-index: 1000">
       <div class="container" style="position: relative">
         <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
           <div class="navbar-brand">
@@ -78,6 +89,7 @@
               <a class="navbar-item is-tab" href="{% link pages/libraries.html %}">Libraries</a>
               <a class="navbar-item is-tab" href="{% link pages/experiments.html %}">Experiments</a>
               <a class="navbar-item is-tab" href="{% link pages/contributions.html %}">Contributions</a>
+              <a class="navbar-item is-tab" href="{% link pages/resume.html %}">Resume</a>
             </div>
           </div>
         </nav>

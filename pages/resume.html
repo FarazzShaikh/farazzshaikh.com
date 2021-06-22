@@ -1,0 +1,183 @@
+---
+layout: default
+permalink: /resume/
+title: Resume
+---
+
+<style>
+  .main {
+    padding: 1em;
+  }
+
+  .hero {
+    /* padding: 2em; */
+  }
+
+  .heading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3em 0em;
+  }
+
+  .socials {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .heading-container .text-content {
+    margin-left: 1em;
+  }
+
+  .heading-container #profile-pic {
+    margin-bottom: 0;
+  }
+
+  .heading {
+    margin-top: 2em;
+  }
+
+  .content-block {
+    padding-left: 3em;
+    margin-left: 3em;
+    padding-bottom: 4em;
+    border-left: 1px solid darkgray;
+  }
+
+  .contact {
+    text-align: center;
+    margin-top: 1em;
+  }
+
+  .contact:not(.contact strong) {
+    font-size: 0.9em;
+    font-style: italic;
+  }
+
+  .side-bar {
+    width: 100%;
+    height: 100%;
+    padding: 0em 2em;
+  }
+
+  .side-bar div {
+    margin: 0.5em 0em;
+    margin-left: 1.5em;
+  }
+
+  .download-container {
+    text-align: center;
+    margin-top: 1em;
+  }
+</style>
+
+<script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+
+<section class="hero is-fullheight is-default">
+  <template id="exp-template">
+    <div class="content-block">
+      <div class="text-content">
+        <h2 class="title is-6 mb-0"></h2>
+        <span class="tag date"></span>
+        <br />
+        <br />
+        <p class="subtitle disc is-6"></p>
+      </div>
+    </div>
+  </template>
+
+  <template id="projects-template">
+    <div class="content-block">
+      <div class="text-content">
+        <h2 class="title is-6 mb-0"></h2>
+        <span class="tag date"></span>
+        <br />
+        <br />
+        <p class="subtitle disc is-6"></p>
+        <span class="tag link"><a href="https://farazshaikh.com/"></a></span>
+        <span class="tag repo"><a href="https://github.com/FarazzShaikh/"></a></span>
+      </div>
+    </div>
+  </template>
+
+  <section class="columns">
+    <section class="column is-two-thirds is-mobile">
+      <div class="main">
+        <div class="heading-container">
+          <img id="profile-pic" src="/Assets/profile.jpg" width="160" height="160" itemprop="image" />
+          <div class="text-content">
+            <h1 class="title is-4" itemprop="name">Faraz Shaikh</h1>
+            <h2 class="subtitle is-6 mb-0" itemprop="description">Open-Source Developer</h2>
+            <h2 class="subtitle is-7">Dubai, United Arab Emirates (UAE)</h2>
+          </div>
+        </div>
+
+        <div class="socials">{% include followButtons.html %}</div>
+
+        <div class="contact"><a href="https://mail.google.com/mail/u/0/?fs=1&to=farazzshaikh@gmail.com&su=About...&body=Hey%20Faraz,%20....&tf=cm">farazzshaikh@gmail.com</a> <strong>•</strong>+971 (0) 56 397 3350 <strong>•</strong> +91 (0) 96067 98367</div>
+
+        <div class="download-container no-print">
+          <a>Download PDF</a>
+        </div>
+
+        <div class="content-container">
+          <h1 class="title is-4 heading">Experience</h1>
+          <div class="exp-container"></div>
+
+          <h1 class="title is-4 heading">Education</h1>
+          <div class="content-block">
+            <div class="text-content">
+              <h2 class="title is-6 mb-0">Heriot Watt University</h2>
+              <span class="tag date">2019 - present (2023)</span>
+              <br />
+              <br />
+              <p class="subtitle disc is-6">Pursuing a Bachelor of Science (BSc) in Computer Science at the Dubai Campus. Graduating in 2023.</p>
+            </div>
+          </div>
+
+          <h1 class="title is-4 heading">Projects</h1>
+          <div class="projects-container"></div>
+        </div>
+      </div>
+    </section>
+    <!-- a -->
+    <section class="column is-one-thirds is-mobile">
+      <div class="side-bar">
+        <h1 class="title is-6 heading">Skills</h1>
+        <div class="content-block">
+          <span>Languages I speak</span>
+          <br />
+          <div class="langs"></div>
+
+          <span>Technologies I use</span>
+          <br />
+          <div class="frameworks"></div>
+        </div>
+
+        <h1 class="title is-6 heading">Intrests</h1>
+        <div class="content-block">
+          <span class="tag">Computer Generated Graphics</span>
+          <br /><br />
+          <span class="tag">Procedural Generation</span>
+          <br /><br />
+          <span class="tag">Web Developement</span>
+          <br /><br />
+          <span class="tag">Web Apps</span>
+          <br /><br />
+        </div>
+
+        <h1 class="title is-6 heading">Achievements</h1>
+        <div class="content-block">
+          <p>Assisted over 30 students with understanding courseworks and subjects at university.</p>
+          <br />
+          <p>Straight "A"s across all subjects in univeristy.</p>
+          <br />
+        </div>
+      </div>
+    </section>
+  </section>
+</section>
+{% include footer.html %}
+
+<script src="/pages/resume.js" defer type="module"></script>
