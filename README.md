@@ -1,6 +1,7 @@
 <p align="center">
-  <h2 align="center">👻</h2>
-  <h1 align="center">farazshaikh.com</h1>
+  <h3 align="center">👻</h3>
+  <h1 align="center">Home</h1>
+    <h3 align="center">farazshaikh.com</h3>
   
   <p align="center">
     This repo contains the code for my portfolio site.
