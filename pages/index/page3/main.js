@@ -5,6 +5,7 @@ import { CustomShaderMaterial, TYPES } from "/lib/three-csm.module.js";
 import { loadShadersCSM, Common, Simplex } from "/lib/glNoise/build/glNoise.m.js";
 
 import waves from "./waves.js";
+import { fps } from "../fps.js";
 
 function lights(scene) {
   const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5, 100);
@@ -214,22 +215,24 @@ loadShadersCSM(v, [Common, Simplex]).then(({ defines, header, main }) => {
     }
   };
 
-  window.addEventListener("scroll", () => {
-    const scroll = document.getScroll();
-    targetPos.y = scroll.y / 100;
+  if (deviceType() === "mobile") {
+    window.addEventListener("scroll", () => {
+      const scroll = document.getScroll();
+      targetPos.y = scroll.y / 100;
 
-    let y = scroll.y / window.innerHeight;
+      let y = scroll.y / window.innerHeight;
 
-    if (y >= 1 && y <= 2 && deviceType() !== "desktop") {
-      y = Math.abs(map(y, 1, 2, -1, 1));
+      if (y >= 1 && y <= 2 && deviceType() !== "desktop") {
+        y = Math.abs(map(y, 1, 2, -1, 1));
 
-      if (material && material.uniforms) {
-        material.uniforms.isDark.value = 1 - y;
+        if (material && material.uniforms) {
+          material.uniforms.isDark.value = 1 - y;
+        }
       }
-    }
-  });
-
-  ele.addEventListener("mousemove", onMove);
+    });
+  } else {
+    ele.addEventListener("mousemove", onMove);
+  }
 
   lights(scene);
 
@@ -256,6 +259,7 @@ loadShadersCSM(v, [Common, Simplex]).then(({ defines, header, main }) => {
     // renderer.info.reset();
 
     // controls.update();
+    fps.tick();
   };
 
   let options = {

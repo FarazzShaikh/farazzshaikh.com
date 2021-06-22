@@ -3,6 +3,7 @@ import { initScene, render, initHelpers } from "./setup.js";
 import waves from "./waves.js";
 import fish from "./fish.js";
 import sub from "./sub.js";
+import { fps } from "../fps.js";
 
 const scene = initScene(2);
 
@@ -19,6 +20,7 @@ const callback = (dt, _ID) => {
   f(dt * 0.0005);
   s(dt);
   ID = _ID;
+  fps.tick();
 };
 //   render(0, callback);
 

@@ -54,37 +54,39 @@
     {% if site.google_analytics and jekyll.environment == 'production' %} {% include analytics.html %} {% endif %}
   </head>
   <body>
-    <section class="hero">
-      <div class="hero-head">
-        <div class="container" style="position: relative">
-          <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-              {% if page.url == '/' %}
-              <a id="unicorn-btn" class="navbar-item no-dark-mode" href="https://sindresorhus.com/unicorn" title="Click me!">👻</a>
-              {% else %}
-              <a href="{% link index.html %}" class="navbar-item">Faraz Shaikh</a>
+    <div class="hero-head" style="position: sticky; position: -webkit-sticky; top: 0; z-index: 1000">
+      <div class="container" style="position: relative">
+        <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
+          <div class="navbar-brand">
+            {% if page.url == '/' %}
+            <a id="unicorn-btn" class="navbar-item no-dark-mode" href="https://sindresorhus.com/unicorn" title="Click me!">👻</a>
+            {% else %}
+            <a href="{% link index.html %}" class="navbar-item">Faraz Shaikh</a>
+            {% endif %}
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+          <div class="navbar-menu is-fixed-top">
+            <div class="navbar-end">
+              {% if page.url != '/' %}
+              <a class="navbar-item is-tab" href="{% link index.html %}">Home</a>
               {% endif %}
-              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-              </a>
+              <a class="navbar-item is-tab" href="{% link pages/apps.html %}">Apps</a>
+              <a class="navbar-item is-tab" href="{% link pages/libraries.html %}">Libraries</a>
+              <a class="navbar-item is-tab" href="{% link pages/experiments.html %}">Experiments</a>
+              <a class="navbar-item is-tab" href="{% link pages/contributions.html %}">Contributions</a>
             </div>
-            <div class="navbar-menu is-fixed-top">
-              <div class="navbar-end">
-                {% if page.url != '/' %}
-                <a class="navbar-item is-tab" href="{% link index.html %}">Home</a>
-                {% endif %}
-                <a class="navbar-item is-tab" href="{% link pages/apps.html %}">Apps</a>
-                <a class="navbar-item is-tab" href="{% link pages/libraries.html %}">Libraries</a>
-                <a class="navbar-item is-tab" href="{% link pages/experiments.html %}">Experiments</a>
-                <a class="navbar-item is-tab" href="{% link pages/contributions.html %}">Contributions</a>
-              </div>
-            </div>
-          </nav>
-        </div>
+          </div>
+        </nav>
       </div>
-    </section>
+      {% if page.url == '/' %}
+      <section class="warning-container">Having trouble running this page? <a href="{% link pages/reader.md %}">Switch to reader view.</a></section>
+      {% endif %}
+    </div>
+
     {{ content }}
   </body>
 </html>

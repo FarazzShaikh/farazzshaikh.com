@@ -139,20 +139,6 @@
     background: radial-gradient(circle, #3a3333 20%, #000000 50%);
 }
 
-.warning-container {
-    width: 100vw;
-    background-color: #ffa8a8;
-    z-index: 10000;
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0;
-    left: 0;
-    padding: 0.2em;
-    text-align: center;
-    font-weight: bold;
-    display: none;
-}
-
 
 @media only screen and (max-width: 1024px) {
     #page-1 {

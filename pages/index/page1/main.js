@@ -4,6 +4,7 @@ import lights from "../lights.js";
 import waves from "./waves.js";
 import cloud from "./cloud.js";
 import plane from "./plane.js";
+import { fps } from "../fps.js";
 
 const scene = initScene(1);
 
@@ -21,6 +22,8 @@ const callback = (dt, _ID) => {
   animate(dt * 0.0005);
   animate_cloud(dt * 0.00005);
   ID = _ID;
+
+  fps.tick();
 };
 
 let options = {

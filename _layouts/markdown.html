@@ -16,13 +16,17 @@ layout: default
     border-radius: 50%;
     width: 130px;
   }
+
+  .column p {
+    text-align: justify;
+  }
 </style>
 
 <section class="hero is-fullheight is-default">
   <div class="hero-body">
     <div class="container">
-      <div class="columns is-vcentered is-centered is-text-centered">
-        <div class="column is-two-thirds is-text-justified content">{{ content }}</div>
+      <div class="columns is-vcentered is-centered">
+        <div class="column is-two-thirds content is-text-justified">{{ content }}</div>
       </div>
     </div>
   </div>

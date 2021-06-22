@@ -4,8 +4,6 @@ layout: default
 
 <link rel="stylesheet" href="/pages/index/index.css" />
 
-<section class="warning-container">Having trouble running this page? <a href="{% link pages/reader.md %}">Switch to reader view.</a></section>
-
 <section class="scroll-container">
   <section id="page-1" class="index hero is-fullheight is-default">
     <div class="has-text-centered Info-container">
@@ -173,6 +171,19 @@ layout: default
 
   {% include footer.html %}
 </section>
+
+<script type="module" defer>
+  import { fps } from "/pages/index/fps.js";
+
+  const s = document.querySelector(".warning-container");
+  setInterval(() => {
+    if (fps.value <= 30) {
+      if (s.style.display !== "block") s.style.display = "block";
+    } else {
+      if (s.style.display !== "none") s.style.display = "none";
+    }
+  }, 1000);
+</script>
 
 <script type="module" src="/pages/index/page1/main.js" defer></script>
 <script type="module" src="/pages/index/page2/main.js" defer></script>
