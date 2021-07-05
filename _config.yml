@@ -18,6 +18,7 @@ collections:
   apps:
     output: true
     order:
+      - This Site.md
       - Terrain Builder.md
 exclude:
   - "tmp/**/*"
