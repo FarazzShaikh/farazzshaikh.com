@@ -469,13 +469,6 @@ kbd {
 }
 
 
-.scroll-container {
-    // scroll-snap-type: y mandatory; 
-    // height: 100vh;
-    // overflow: scroll;
-}
-
-
 .read-more {
     position: absolute;
     bottom: 0;
@@ -589,12 +582,6 @@ footer {
         left: 0;
         width: 128px;
         max-width: 200px;
-    }
-
-    .scroll-container {
-        scroll-snap-type: none; 
-        height: auto;
-        overflow: visible;
     }
 
     .read-more {
