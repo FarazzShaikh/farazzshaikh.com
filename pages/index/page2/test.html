@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" playing="false">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, minimal-ui, viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <style>
+      body {
+        /* background: linear-gradient(to bottom, #222222, #000); */
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+      }
+      .three {
+        background: linear-gradient(0deg, #000000, #070707);
+        height: 100vh;
+        width: 100vw;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .two {
+        background: linear-gradient(to top, #222222, #000);
+        height: 100vh;
+        width: 100vw;
+      }
+
+      .three canvas {
+        height: 100vh;
+        width: 100vw;
+      }
+
+      @media only screen and (max-width: 768px) {
+        .three {
+          background: linear-gradient(0deg, #000000 15%, #403626 30%, #070707 70%);
+        }
+        .three canvas {
+          height: 100vh;
+          width: 100vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="three">
+      <canvas width="500" height="500"></canvas>
+    </div>
+    <script type="module" src="./main.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#3273DC" />
+    <meta name="author" content="Faraz Shaikh" />
+    
+    <meta name="description" content="Open-Source Web Developer and 3D Graphics Artist." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Sea Breeze" />
+    <meta property="og:url" content="https://farazshaikh.com/experiments/Sea%20Breeze/index.html" />
+    <meta property="og:description" content="Open-Source Web Developer and 3D Graphics Artist." />
+    
+    <meta property="og:image" content="https://farazshaikh.com/Assets/profile.jpg" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@CantBeFaraz" />
+    <meta name="twitter:creator" content="@CantBeFaraz" />
+    <meta name="x-build-time" content="Thu, 19 Oct 2023 17:42:15 +0000" />
+    <title>Sea Breeze | Faraz Shaikh</title>
+    <link rel="alternate" type="application/rss+xml" title="Faraz Shaikh's blog" href="https://farazzshaikh.medium.com/" />
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👻</text></svg>" />
+
+    <link id="bulma" rel="stylesheet" href="/main.css" />
+
+    <style type="text/css" media="print">
+      .no-print {
+        display: none;
+      }
+
+      @page {
+        size: auto; /* auto is the initial value */
+        margin: 0mm; /* this affects the margin in the printer settings */
+      }
+    </style>
+
+    <script type="module" src="/main.js"></script>
+    <script>
+      console.log(`
+    .__________________________.
+    | .___________________. |==|
+    | | Hello,            | |  |
+    | |   fellow dev!     | |  |
+    | |                   | |  |
+    | | Found something   | |  |
+    | | wrong? Email me!  | |  |
+    | |                   | |  |
+    | | farazzshaikh      | |  |
+    | |        @gmail.com | | ,|
+    | !___________________! |(c|
+    !_______________________!__!
+   /                            \\
+  /  [][][][][][][][][][][][][]  \\
+ /  [][][][][][][][][][][][][][]  \\
+(  [][][][][____________][][][][]  )
+ \\ ------------------------------ /
+  \\______________________________/
+        `);
+    </script>
+     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5C1GFMMHFF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "G-5C1GFMMHFF");
+</script>
+ 
+  </head>
+  <body>
+    <div class="hero-head no-print" style="position: sticky; position: -webkit-sticky; top: 0; z-index: 1000">
+      <div class="container" style="position: relative">
+        <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
+          <div class="navbar-brand">
+            
+            <a href="/" class="navbar-item">Faraz Shaikh</a>
+            
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+          <div class="navbar-menu is-fixed-top">
+            <div class="navbar-end">
+              
+              <a class="navbar-item is-tab" href="/">Home</a>
+              
+              <a class="navbar-item is-tab" href="/apps/">Apps</a>
+              <a class="navbar-item is-tab" href="/libraries/">Libraries</a>
+              <a class="navbar-item is-tab" href="/experiments/">Experiments</a>
+              <a class="navbar-item is-tab" href="/contributions/">Contributions</a>
+              <a class="navbar-item is-tab" href="/resume/">Resume</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+      
+    </div>
+
+    <section class="Demo-View">
+  <section class="ThreeD-View">
+    <div class="ThreeD-container">
+      
+      <iframe scrolling="no" seamless> </iframe>
+      <script defer>
+        const escape = document.createElement("textarea");
+        function unescapeHTML(html) {
+          escape.innerHTML = html;
+          return escape.textContent;
+        }
+
+        const html = `&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot; playing=&quot;false&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, minimal-ui, viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no&quot; /&gt;
+    &lt;link href=&quot;../demos.css&quot; rel=&quot;stylesheet&quot; /&gt;
+    &lt;style&gt;
+      body {
+        background: linear-gradient(#e4e0ba, #f7d9aa);
+      }
+    &lt;/style&gt;
+    &lt;script&gt;
+      const s = webgl_support();
+      if (!s) {
+        window.location.replace(&quot;../noWebGL.html&quot;);
+      }
+      function webgl_support() {
+        try {
+          var canvas = document.createElement(&quot;canvas&quot;);
+          return !!window.WebGLRenderingContext &amp;&amp; (canvas.getContext(&quot;webgl&quot;) || canvas.getContext(&quot;experimental-webgl&quot;));
+        } catch (e) {
+          return false;
+        }
+      }
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;script type=&quot;module&quot; src=&quot;./main.js&quot; defer&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+`;
+        const iframeDocument = document.querySelector("iframe").contentWindow.document;
+        const content = `<html>${unescapeHTML(html)} </html>`;
+
+        iframeDocument.open("text/html", "replace");
+        iframeDocument.write(content);
+        iframeDocument.close();
+
+        document.querySelector("iframe").addEventListener("load", () => {
+          const h = `<div class="blur" style="background-color: transparent; width: 100%; height: 100%; backdrop-filter: blur(0px) brightness(80%); z-index: 10000;     position: absolute; top: 0; left: 0">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cogs" class="svg-inline--fa fa-cogs fa-w-20" role="img" viewBox="0 0 640 512"><path fill="currentColor" d="M512.1 191l-8.2 14.3c-3 5.3-9.4 7.5-15.1 5.4-11.8-4.4-22.6-10.7-32.1-18.6-4.6-3.8-5.8-10.5-2.8-15.7l8.2-14.3c-6.9-8-12.3-17.3-15.9-27.4h-16.5c-6 0-11.2-4.3-12.2-10.3-2-12-2.1-24.6 0-37.1 1-6 6.2-10.4 12.2-10.4h16.5c3.6-10.1 9-19.4 15.9-27.4l-8.2-14.3c-3-5.2-1.9-11.9 2.8-15.7 9.5-7.9 20.4-14.2 32.1-18.6 5.7-2.1 12.1.1 15.1 5.4l8.2 14.3c10.5-1.9 21.2-1.9 31.7 0L552 6.3c3-5.3 9.4-7.5 15.1-5.4 11.8 4.4 22.6 10.7 32.1 18.6 4.6 3.8 5.8 10.5 2.8 15.7l-8.2 14.3c6.9 8 12.3 17.3 15.9 27.4h16.5c6 0 11.2 4.3 12.2 10.3 2 12 2.1 24.6 0 37.1-1 6-6.2 10.4-12.2 10.4h-16.5c-3.6 10.1-9 19.4-15.9 27.4l8.2 14.3c3 5.2 1.9 11.9-2.8 15.7-9.5 7.9-20.4 14.2-32.1 18.6-5.7 2.1-12.1-.1-15.1-5.4l-8.2-14.3c-10.4 1.9-21.2 1.9-31.7 0zm-10.5-58.8c38.5 29.6 82.4-14.3 52.8-52.8-38.5-29.7-82.4 14.3-52.8 52.8zM386.3 286.1l33.7 16.8c10.1 5.8 14.5 18.1 10.5 29.1-8.9 24.2-26.4 46.4-42.6 65.8-7.4 8.9-20.2 11.1-30.3 5.3l-29.1-16.8c-16 13.7-34.6 24.6-54.9 31.7v33.6c0 11.6-8.3 21.6-19.7 23.6-24.6 4.2-50.4 4.4-75.9 0-11.5-2-20-11.9-20-23.6V418c-20.3-7.2-38.9-18-54.9-31.7L74 403c-10 5.8-22.9 3.6-30.3-5.3-16.2-19.4-33.3-41.6-42.2-65.7-4-10.9.4-23.2 10.5-29.1l33.3-16.8c-3.9-20.9-3.9-42.4 0-63.4L12 205.8c-10.1-5.8-14.6-18.1-10.5-29 8.9-24.2 26-46.4 42.2-65.8 7.4-8.9 20.2-11.1 30.3-5.3l29.1 16.8c16-13.7 34.6-24.6 54.9-31.7V57.1c0-11.5 8.2-21.5 19.6-23.5 24.6-4.2 50.5-4.4 76-.1 11.5 2 20 11.9 20 23.6v33.6c20.3 7.2 38.9 18 54.9 31.7l29.1-16.8c10-5.8 22.9-3.6 30.3 5.3 16.2 19.4 33.2 41.6 42.1 65.8 4 10.9.1 23.2-10 29.1l-33.7 16.8c3.9 21 3.9 42.5 0 63.5zm-117.6 21.1c59.2-77-28.7-164.9-105.7-105.7-59.2 77 28.7 164.9 105.7 105.7zm243.4 182.7l-8.2 14.3c-3 5.3-9.4 7.5-15.1 5.4-11.8-4.4-22.6-10.7-32.1-18.6-4.6-3.8-5.8-10.5-2.8-15.7l8.2-14.3c-6.9-8-12.3-17.3-15.9-27.4h-16.5c-6 0-11.2-4.3-12.2-10.3-2-12-2.1-24.6 0-37.1 1-6 6.2-10.4 12.2-10.4h16.5c3.6-10.1 9-19.4 15.9-27.4l-8.2-14.3c-3-5.2-1.9-11.9 2.8-15.7 9.5-7.9 20.4-14.2 32.1-18.6 5.7-2.1 12.1.1 15.1 5.4l8.2 14.3c10.5-1.9 21.2-1.9 31.7 0l8.2-14.3c3-5.3 9.4-7.5 15.1-5.4 11.8 4.4 22.6 10.7 32.1 18.6 4.6 3.8 5.8 10.5 2.8 15.7l-8.2 14.3c6.9 8 12.3 17.3 15.9 27.4h16.5c6 0 11.2 4.3 12.2 10.3 2 12 2.1 24.6 0 37.1-1 6-6.2 10.4-12.2 10.4h-16.5c-3.6 10.1-9 19.4-15.9 27.4l8.2 14.3c3 5.2 1.9 11.9-2.8 15.7-9.5 7.9-20.4 14.2-32.1 18.6-5.7 2.1-12.1-.1-15.1-5.4l-8.2-14.3c-10.4 1.9-21.2 1.9-31.7 0zM501.6 431c38.5 29.6 82.4-14.3 52.8-52.8-38.5-29.6-82.4 14.3-52.8 52.8z"/></svg>
+        <h1>Click to play</h1>
+        <h3>This demo may slow down your browser. If so just refresh and it will stop.</h3>
+        </div>`;
+
+          iframeDocument.body.innerHTML += h;
+
+          iframeDocument.body.addEventListener("mousedown", () => {
+            iframeDocument.querySelector(".blur").remove();
+            iframeDocument.querySelector("html").setAttribute("playing", "true");
+          });
+
+          let observer;
+
+          let options = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0,
+          };
+
+          observer = new IntersectionObserver(([{ isIntersecting }]) => {
+            if (!isIntersecting) {
+              iframeDocument.querySelector("html").setAttribute("playing", "false");
+            } else {
+              if (!iframeDocument.querySelector(".blur")) iframeDocument.querySelector("html").setAttribute("playing", "true");
+            }
+          }, options);
+          observer.observe(document.querySelector("iframe"));
+        });
+      </script>
+      <div class="read-more">
+        <h1>Read More</h1>
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down" class="svg-inline--fa fa-angle-down fa-w-10" role="img" viewBox="0 0 320 512">
+          <path fill="currentColor" d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="Info-View">
+    <div class="Info-container">
+      <h1 class="title">Sea Breeze</h1>
+      
+      <h2 class="subtitle">Flying over a procedural ocean.</h2>
+      <div class="langs"></div>
+      <p class="has-text-justified"><p>This is, once again, a demo for mt library <a href="https://github.com/FarazzShaikh/glNoise">gl-Noise</a>. It demostrates a procedual ocean made using Gerstner Waves. To produce detailed waves, many layers of varying Gerstner Waves were used akin to Fractal Noise. To add even more detail, Perlin Noise based Fractal Noise was also added. The Waves are calcualrted within a Vertex Shader. The sea foam is emulated by blending two colors based on the vertical component of the waves. <br /> <br /> The plane is a <a href="https://skfb.ly/o6xsH">“Stylized Ww1 Plane”</a> by Sketchfab user cyberdan and is licensed under <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution</a>. <br /> <br /> The animations for the plane were done by interpolating the plane towards the mouse using a simple lerp function. The roll and pitch were done using a modified lerp function. The clouds were also procedurally generated. A wake appears when the plane is close to the surface. The particles are instanced meshes and require only 1 draw call. <br /> <br /> <img src="./Assets/banner.jpg" alt="banner" /></p>
+</p>
+    </div>
+  </section>
+
+  <style>
+    .Demo-View {
+      scroll-snap-type: y mandatory;
+      overflow: scroll;
+      height: 100vh;
+    }
+
+    .ThreeD-View {
+      width: 100%;
+      height: 100vh;
+      scroll-snap-align: start;
+    }
+
+    .ThreeD-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+      padding-top: 1em;
+    }
+
+    .ThreeD-View iframe {
+      border: none;
+      width: 100%;
+      height: 80%;
+    }
+
+    @media only screen and (max-width: 768px) {
+      /* For mobile phones: */
+      .ThreeD-container {
+        justify-content: flex-start;
+      }
+      .ThreeD-View iframe {
+        height: 85%;
+      }
+    }
+
+    .Info-View {
+      scroll-snap-align: start;
+      width: 100%;
+      height: auto;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .Info-View .Info-container {
+      width: 80%;
+      margin-bottom: 20%;
+      text-align: justify;
+    }
+
+    .Info-View .langs {
+      margin: 1em 0em;
+    }
+  </style>
+  <script defer>
+    (async () => {
+      const colors = await (await fetch("/colors.json")).json();
+      const langContainer = document.querySelector(".Info-View .Info-container .langs");
+
+      function brightnessByColor(color) {
+        var color = "" + color,
+          isHEX = color.indexOf("#") == 0,
+          isRGB = color.indexOf("rgb") == 0;
+        if (isHEX) {
+          const hasFullSpec = color.length == 7;
+          var m = color.substr(1).match(hasFullSpec ? /(\S{2})/g : /(\S{1})/g);
+          if (m)
+            var r = parseInt(m[0] + (hasFullSpec ? "" : m[0]), 16),
+              g = parseInt(m[1] + (hasFullSpec ? "" : m[1]), 16),
+              b = parseInt(m[2] + (hasFullSpec ? "" : m[2]), 16);
+        }
+        if (isRGB) {
+          var m = color.match(/(\d+){3}/g);
+          if (m)
+            var r = m[0],
+              g = m[1],
+              b = m[2];
+        }
+        if (typeof r != "undefined") return (r * 299 + g * 587 + b * 114) / 1000;
+      }
+
+      function createLangTags(langs, colors) {
+        return langs.map((l) => {
+          const color = colors[l] ? colors[l].color : null;
+          const textColor = brightnessByColor(color) < 150 && color ? "white" : "black";
+
+          return `
+                        <span class="tag is-small"
+                            style="background-color: ${color || "#cccccc"}; color: ${textColor}"
+                        >${l}</span>
+                        `;
+        });
+      }
+
+      const langs = "GLSL JavaScript".split(" ");
+      const h = createLangTags(langs, colors).join("\n");
+      langContainer.innerHTML = h;
+    })();
+  </script>
+</section>
+
+  </body>
+</html>

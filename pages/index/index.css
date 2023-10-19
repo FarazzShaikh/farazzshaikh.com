@@ -1,0 +1,248 @@
+#page-1,#page-2, #page-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    scroll-snap-stop: always;
+}
+
+.nogl:not(#page-3.nogl) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.index {
+    background-color: #f9f9f9;
+    scroll-snap-align: start;
+    position: relative;
+}
+
+.ThreeD-Container.plane {
+    height: 100vh;
+    width: 50vw;
+}
+
+.ThreeD-Container.plane canvas {
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(circle, #403626 20%, #000000 50%);
+}
+
+#page-1 .Info-container {
+    width: 50vw;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 100;
+    background-color: transparent;
+    padding: 2em;
+    padding-bottom: 3em;
+    pointer-events: none;
+}
+
+#page-1 code {
+    background-color: transparent;
+}
+
+.Info-container .button {
+    pointer-events: all;
+    transition: filter 100ms ease-in-out;
+    margin: 2px;
+}
+
+.Info-container .buttons {
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.Info-container .button:hover {
+    filter: invert(100%);
+}
+
+.Info-container .button:active {
+    filter: invert(0%);
+}
+
+
+#page-2 .latest-container {
+    width: 50vw;
+    height: 100%;
+    background-color: transparent;
+}
+
+.ThreeD-Container.sub {
+    height: 100vh;
+    width: 50vw;
+}
+
+.ThreeD-Container.sub canvas {
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(circle, #263340 20%, #000000 50%);
+}
+
+#page-3 {
+    height: 200vh;
+    align-items: flex-start;
+    
+}
+
+#page-3 .about-container {
+    width: 50vw;
+    height: 100%;
+   
+    z-index: 100;
+    background-color: transparent;
+}
+
+#page-3 .about-container .sub-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2em;
+    height: 100vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+#page-3 .about-container .sub-section p,
+#page-3 .about-container .sub-section .ts {
+    text-align: justify;
+}
+
+#page-3 .about-container .sub-section .read-more {
+    position: relative;
+    padding: 0;
+}
+
+#page-3 .ThreeD-Container.particle {
+    height: 100vh;
+    width: 50vw;
+    
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+.ThreeD-Container.particle canvas {
+    height: 100vh;
+    width: 100%;
+    background: radial-gradient(circle, #3a3333 20%, #000000 50%);
+}
+
+
+@media only screen and (max-width: 1024px) {
+    #page-1 {
+        display: block;
+        position: relative;
+    }
+
+    #page-1 .Info-container {
+        width: 100vw;
+        height: 90vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: transparent;
+
+        padding: 0;
+        padding-bottom: 5em;
+    }
+
+    #page-1 code {
+        font-size: small;
+    }
+
+    #page-1 .Info-container img {
+        width: 128px;
+        height: 128px;
+    }
+
+    .Info-container .button {
+        padding-right: 0.2em;
+    }
+
+    .ThreeD-Container.plane {
+        height: 100vh;
+        width: 100vw;
+        /* background: linear-gradient(180deg, #000000 40%, #263340 50vh, #000000 60%); */
+    }
+
+    #page-2 {
+        display: block;
+        position: relative;
+    }
+
+    #page-2 .latest-container {
+        width: 80vw;
+        height: 90vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: transparent;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+        pointer-events: none;
+    }
+
+    #page-2 .latest-container a {
+        pointer-events: all;
+    }
+
+    .ThreeD-Container.sub {
+        height: 100vh;
+        width: 100vw;
+        /* background: linear-gradient(180deg, #000000 40%, #263340 50vh, #000000 60%); */
+    }
+
+
+    #page-3 .about-container {
+        width: 100vw;
+
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        background-color: transparent;
+        padding: 1em;
+    }
+
+    #page-3 .ThreeD-Container.particle {
+        width: 100vw;
+    }
+
+    #page-2 .read-more {
+        display: none;
+    }
+    
+}
+
+
+@media (prefers-color-scheme: light) {
+	
+    .ThreeD-Container.plane canvas {
+        background: radial-gradient(circle, #ffdba2 20%, #f9f9f9 50%);
+    }
+
+    .ThreeD-Container.sub canvas {
+        background: radial-gradient(circle, #a6d2ff 20%, #f9f9f9 50%);
+    }
+
+    .ThreeD-Container.particle canvas {
+        background: radial-gradient(circle, #ffdada 20%, #f9f9f9 50%);
+    }
+}
