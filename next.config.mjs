@@ -6,6 +6,7 @@ if (process.env.NODE_ENV === "development") {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "export", // <=== enables static exports
   reactStrictMode: true,
   webpack: (config, { isServer }) => {
     // Grab the existing rule that handles SVG imports
