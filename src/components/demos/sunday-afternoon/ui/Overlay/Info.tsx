@@ -98,7 +98,7 @@ export function Info() {
               </Text>
               <Image
                 float="right"
-                src="/images/sunday-afternoon/image.png"
+                src="/images/sunday-afternoon/image.jpg"
                 alt="A wooden floor with a shadow of a window"
                 w="50%"
               />

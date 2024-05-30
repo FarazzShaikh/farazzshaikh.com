@@ -1,4 +1,5 @@
 import { SundayAfternoon } from "@/components/demos/sunday-afternoon";
+import { META } from "@/utils/meta";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { Homemade_Apple, Raleway } from "next/font/google";
 import { useMemo } from "react";
@@ -21,6 +22,13 @@ export default function Page() {
           "Raleway Variable": "var(--font-RalewayVariable)",
           "Homemade Apple": "var(--font-HomemadeApple)",
         },
+        styles: {
+          global: {
+            body: {
+              bg: META.DEMOS.SUNDAY_AFTERNOON.THEME_COLOR,
+            },
+          },
+        },
       }),
     []
   );
@@ -32,6 +40,10 @@ export default function Page() {
           :root {
             --font-RalewayVariable: ${RalewayVariable.style.fontFamily};
             --font-HomemadeApple: ${HomemadeApple.style.fontFamily};
+          }
+
+          html {
+            background-color: ${META.DEMOS.SUNDAY_AFTERNOON.THEME_COLOR};
           }
         `}
       </style>

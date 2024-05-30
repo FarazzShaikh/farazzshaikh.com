@@ -65,7 +65,7 @@ export function Cat() {
       position={[-0.1, -1.2, 0]}
       rotation={[0, MathUtils.degToRad(70), 0]}
       object={scene}
-      scale={0.5}
+      scale={2}
     />
   );
 }
