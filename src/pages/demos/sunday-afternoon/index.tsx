@@ -1,9 +1,9 @@
 import { SundayAfternoon } from "@/components/demos/sunday-afternoon";
+import { Head } from "@/components/demos/sunday-afternoon/Head";
 import { META } from "@/utils/meta";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { Homemade_Apple, Raleway } from "next/font/google";
 import { useMemo } from "react";
-import { Head } from "./Head";
 
 const HomemadeApple = Homemade_Apple({
   weight: "400",
