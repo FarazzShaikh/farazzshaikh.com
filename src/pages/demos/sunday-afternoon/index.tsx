@@ -1,8 +1,8 @@
 import { SundayAfternoon } from "@/components/demos/sunday-afternoon";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { Homemade_Apple, Raleway } from "next/font/google";
-import Head from "next/head";
 import { useMemo } from "react";
+import { Head } from "./Head";
 
 const HomemadeApple = Homemade_Apple({
   weight: "400",
@@ -35,13 +35,9 @@ export default function Page() {
           }
         `}
       </style>
-      <Head>
-        <title>Sunday Afternoon by Faraz Shaikh</title>
-        <meta
-          name="description"
-          content="A relaxing scene of a Sunday afternoon"
-        />
-      </Head>
+
+      <Head />
+
       <ChakraProvider theme={theme}>
         <SundayAfternoon />
       </ChakraProvider>
