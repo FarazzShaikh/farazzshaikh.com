@@ -17,7 +17,7 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { BsInfoCircleFill } from "react-icons/bs";
-import PlayingLottie from "./Animation - 1716739555712.json";
+import PlayingLottie from "./audioPlaybackLottie.json";
 
 import Lottie from "react-lottie";
 

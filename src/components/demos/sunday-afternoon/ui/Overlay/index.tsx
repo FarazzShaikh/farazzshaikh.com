@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   HStack,
   Heading,
@@ -7,6 +8,7 @@ import {
   Tooltip,
   VStack,
 } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import {
   BsArrowUpRightSquareFill,
   BsGithub,
@@ -15,13 +17,24 @@ import {
 } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { Info } from "./Info";
-import { OverlayContainer } from "./styled";
+
+const MotionBox = motion(Box);
+
 export function Overlay({ started }: { started: boolean }) {
   return (
-    <OverlayContainer
-      initial={{ opacity: 0 }}
-      animate={{ opacity: started ? 1 : 0 }}
+    <MotionBox
+      initial={{ opacity: 0, pointerEvents: "none" }}
+      animate={{
+        opacity: started ? 1 : 0,
+        pointerEvents: started ? "auto" : "none",
+      }}
       transition={{ duration: 2, delay: 3.5 }}
+      position="fixed"
+      top={0}
+      left={0}
+      zIndex="docked"
+      w="full"
+      h="full"
     >
       <Info />
 
@@ -104,6 +117,6 @@ export function Overlay({ started }: { started: boolean }) {
           </Tooltip>
         </HStack>
       </VStack>
-    </OverlayContainer>
+    </MotionBox>
   );
 }

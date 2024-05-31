@@ -2,7 +2,7 @@ import { Box, Heading, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { StartButton } from "./styled";
 
-import { useLoader } from "@/context/LoaderContext";
+import { useLoader } from "@/context/LoaderContext/store";
 import { motion } from "framer-motion";
 
 const MotionBox = motion(Box);
@@ -14,25 +14,24 @@ export function Loader({
   started: boolean;
   setStarted: (started: boolean) => void;
 }) {
-  const loadingProgress = useLoader((s) => s.progress);
-
+  const loaded = useLoader((s) => s.loaded);
   const [loadingDone, setLoadingDone] = useState(false);
 
   useEffect(() => {
-    if (loadingProgress === 1) {
+    if (loaded) {
       setTimeout(() => {
         setLoadingDone(true);
       }, 1000);
     }
-  }, [loadingProgress]);
+  }, [loaded]);
 
   return (
     <>
       <MotionBox
-        position="absolute"
-        top="50%"
-        left="50%"
-        transform="translate(-50%, -50%)"
+        position="fixed"
+        top={0}
+        left={0}
+        zIndex="docked"
         w="full"
         h="full"
         display="flex"
@@ -71,7 +70,7 @@ export function Loader({
               bottom={4}
               right={4}
             >
-              Loading...
+              Loading assets...
             </Text>
           )
         ) : null}

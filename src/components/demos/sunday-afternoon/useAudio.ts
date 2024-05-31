@@ -1,18 +1,21 @@
-import { useLoader } from "@/context/LoaderContext";
+import { useAudioAsset } from "@/context/LoaderContext/useAsset";
 import { useCallback } from "react";
 import { ASSETS } from "./assets";
 
 export function useAudio() {
-  const loader = useLoader((s) => s.loader);
-  const bgMusic = loader.loadAudio(ASSETS.WODDDEN_FLOOR.AUDIO.BG);
+  const bgMusic = useAudioAsset(ASSETS.WODDDEN_FLOOR.AUDIO.BG);
 
   return {
     playAudio: useCallback(() => {
-      bgMusic.loop(true);
-      bgMusic.play();
-    }, []),
+      if (bgMusic) {
+        bgMusic.loop(true);
+        bgMusic.play();
+      }
+    }, [bgMusic]),
     stopAudio: useCallback(() => {
-      bgMusic.stop();
-    }, []),
+      if (bgMusic) {
+        bgMusic.stop();
+      }
+    }, [bgMusic]),
   };
 }

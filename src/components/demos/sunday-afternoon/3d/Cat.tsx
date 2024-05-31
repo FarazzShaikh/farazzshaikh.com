@@ -1,14 +1,11 @@
-import { useLoader } from "@/context/LoaderContext";
+import { useGLTFAsset } from "@/context/LoaderContext/useAsset";
 import { useAnimations } from "@react-three/drei";
 import { useEffect } from "react";
 import { LoopOnce, MathUtils } from "three";
 import { ASSETS } from "../assets";
 
 export function Cat() {
-  const loader = useLoader((s) => s.loader);
-  const { scene, animations } = loader.loadGltf(
-    ASSETS.WODDDEN_FLOOR.MODELS.CAT
-  );
+  const { scene, animations } = useGLTFAsset(ASSETS.WODDDEN_FLOOR.MODELS.CAT);
   const { actions, mixer } = useAnimations(animations, scene);
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-import { useLoader } from "@/context/LoaderContext";
+import { useTextureAsset } from "@/context/LoaderContext/useAsset";
 import { Environment, SpotLight, SpotLightShadow } from "@react-three/drei";
 import { useEffect, useRef } from "react";
 import { Group, MathUtils, SpotLight as SpotLightType } from "three";
@@ -11,8 +11,7 @@ export function Lights() {
   const spotLightRef = useRef<SpotLightType>(null!);
   const curtainRef = useRef<Group>(null!);
 
-  const loader = useLoader((s) => s.loader);
-  const envMap = loader.loadTexture(ASSETS.WODDDEN_FLOOR.TEXTURES.ENV);
+  const envMap = useTextureAsset(ASSETS.WODDDEN_FLOOR.TEXTURES.ENV);
 
   useEffect(() => {
     spotLightRef.current.getWorldPosition(curtainRef.current.position);

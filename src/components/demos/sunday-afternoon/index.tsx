@@ -8,7 +8,6 @@ import { MultiplyBlending } from "three";
 import { Camera } from "./3d/Camera";
 import { Floor } from "./3d/Floor";
 import { Lights } from "./3d/Lights";
-import { UiContainer } from "./styled";
 
 import { useEffect, useState } from "react";
 import { Loader } from "./ui/Loader";
@@ -61,13 +60,10 @@ function WoodenFloorUI() {
   }, [started]);
 
   return (
-    <UiContainer>
+    <>
       <Loader started={started} setStarted={setStarted} />
       <Overlay started={started} />
-
-      {/* <Title />
-      <Quote /> */}
-    </UiContainer>
+    </>
   );
 }
 

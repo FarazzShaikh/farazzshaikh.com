@@ -1,12 +1,11 @@
 import { useFrame, useThree } from "@react-three/fiber";
 import * as React from "react";
-import { useLoader } from ".";
+import { useLoader } from "./store";
 
 interface WaitForFirstRenderProps {
   preloadTextures?: string[];
   preloadGLTF?: string[];
   preloadAudio?: string[];
-  setLoaded: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export function WaitForFirstRender({
@@ -14,7 +13,6 @@ export function WaitForFirstRender({
   preloadAudio,
   preloadGLTF,
   preloadTextures,
-  setLoaded,
 }: React.PropsWithChildren<WaitForFirstRenderProps>) {
   const advance = useThree((s) => s.advance);
   const isFirstRender = React.useRef(true);
@@ -27,17 +25,17 @@ export function WaitForFirstRender({
         await loader.preloadGLTF(preloadGLTF ?? []);
         await loader.preloadTextures(preloadTextures ?? []);
         await loader.preloadAudio(preloadAudio ?? []);
+        useLoader.setState({ loadedAssets: true });
+        advance(Date.now());
       } catch (error) {
-        console.error(error);
+        throw error;
       }
-
-      advance(Date.now());
     })();
   }, []);
 
   useFrame(() => {
     if (isFirstRender.current) {
-      setLoaded(true);
+      useLoader.setState({ loaded: true });
       isFirstRender.current = false;
     }
   });

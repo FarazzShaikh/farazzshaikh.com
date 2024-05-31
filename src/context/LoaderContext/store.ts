@@ -1,13 +1,14 @@
-import { createStore } from "zustand";
+import { create } from "zustand";
 import { Loader } from "./Loader";
 
 export interface LoadingState {
-  progress: number;
+  loadedAssets: boolean;
+  loaded: boolean;
   loader: Loader;
 }
 
-export const createLoadingStore = () =>
-  createStore<LoadingState>(() => ({
-    progress: 0,
-    loader: new Loader(),
-  }));
+export const useLoader = create<LoadingState>(() => ({
+  loadedAssets: false,
+  loaded: false,
+  loader: new Loader(),
+}));

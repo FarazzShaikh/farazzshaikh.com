@@ -25,6 +25,8 @@ export class Loader {
   rgbeLoader: RGBELoader;
   manager: LoadingManager;
 
+  currentLoadingPath: string | null = null;
+
   gltfCache: {
     [key: string]: GltfWithNodes;
   };
@@ -61,6 +63,7 @@ export class Loader {
 
   async preloadAudio(paths: string[]) {
     for (const path of paths) {
+      this.currentLoadingPath = path;
       const audio = new Howl({
         src: path,
         volume: 1,
@@ -74,6 +77,8 @@ export class Loader {
 
   async preloadTextures(paths: string[]) {
     for (const path of paths) {
+      this.currentLoadingPath = path;
+
       const ext = path.split(".").pop();
 
       let texture: Texture;
@@ -95,14 +100,15 @@ export class Loader {
 
   async preloadGLTF(paths: string[]) {
     for (const path of paths) {
+      this.currentLoadingPath = path;
+
       const loaded = (await this.gltfLoader.loadAsync(path)) as GltfWithNodes;
       this.gltfCache[path] = loaded;
     }
   }
 
-  loadAudio(keyOrSrc: string): Howl {
+  loadAudio(keyOrSrc: string): Howl | undefined {
     const audio = this.audioCache[keyOrSrc];
-    if (!audio) throw new Error(`Audio ${keyOrSrc} not preloaded`);
     return audio;
   }
 

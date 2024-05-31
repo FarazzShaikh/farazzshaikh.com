@@ -7,8 +7,14 @@ export default function Document() {
       <Head>
         <meta name="robots" content="all" />
         <link rel="icon" type="image/x-icon" href={META.FAVICON} />
+        <link rel="stylesheet" href="/staticStyles.css" />
       </Head>
       <body>
+        <div className="loader-container">
+          <div className="loader"></div>
+          <div className="loader-text">Loading application</div>
+        </div>
+
         <Main />
         <NextScript />
       </body>

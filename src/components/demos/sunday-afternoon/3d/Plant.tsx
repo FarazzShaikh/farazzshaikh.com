@@ -1,10 +1,9 @@
-import { useLoader } from "@/context/LoaderContext";
+import { useTextureAsset } from "@/context/LoaderContext/useAsset";
 import { ShadowAlpha } from "@react-three/drei";
 import { ASSETS } from "../assets";
 
 export function Plant() {
-  const loader = useLoader((s) => s.loader);
-  const map = loader.loadTexture(ASSETS.WODDDEN_FLOOR.TEXTURES.PLANT);
+  const map = useTextureAsset(ASSETS.WODDDEN_FLOOR.TEXTURES.PLANT);
 
   return (
     <mesh castShadow position={[0, 0.3, 0]} scale={0.7}>

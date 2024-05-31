@@ -1,18 +1,15 @@
-import { useLoader } from "@/context/LoaderContext";
+import { useTextureAssets } from "@/context/LoaderContext/useAsset";
 import { useEffect } from "react";
 import { RepeatWrapping, Texture } from "three";
 import { ASSETS } from "../assets";
 
 export function Floor() {
-  const loader = useLoader((s) => s.loader);
-  const maps = {
-    map: loader.loadTexture(ASSETS.WODDDEN_FLOOR.TEXTURES.FLOOR_ALBEDO),
-    normalMap: loader.loadTexture(ASSETS.WODDDEN_FLOOR.TEXTURES.FLOOR_NORMAL),
-    aoMap: loader.loadTexture(ASSETS.WODDDEN_FLOOR.TEXTURES.FLOOR_AO),
-    roughnessMap: loader.loadTexture(
-      ASSETS.WODDDEN_FLOOR.TEXTURES.FLOOR_ROUGHNESS
-    ),
-  };
+  const maps = useTextureAssets({
+    map: ASSETS.WODDDEN_FLOOR.TEXTURES.FLOOR_ALBEDO,
+    normalMap: ASSETS.WODDDEN_FLOOR.TEXTURES.FLOOR_NORMAL,
+    aoMap: ASSETS.WODDDEN_FLOOR.TEXTURES.FLOOR_AO,
+    roughnessMap: ASSETS.WODDDEN_FLOOR.TEXTURES.FLOOR_ROUGHNESS,
+  });
 
   useEffect(() => {
     for (const map in maps) {

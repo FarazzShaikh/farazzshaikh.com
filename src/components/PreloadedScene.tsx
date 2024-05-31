@@ -1,5 +1,6 @@
+import { useLoader } from "@/context/LoaderContext/store";
 import { Canvas, CanvasProps } from "@react-three/fiber";
-import { useState } from "react";
+import { useEffect } from "react";
 import { WaitForFirstRender } from "../context/LoaderContext/WaitForFirstRender";
 
 interface LoaderProviderProps {
@@ -21,11 +22,24 @@ export function PreloadedScene({
   preloadGLTF,
   preloadAudio,
 }: LoaderProviderProps) {
-  const [loaded, setLoaded] = useState(false);
+  const loaded = useLoader((s) => s.loaded);
+  const loadedAssets = useLoader((s) => s.loadedAssets);
+
+  useEffect(() => {
+    const staticLoader = document.querySelector(
+      ".loader-container"
+    ) as HTMLDivElement;
+    if (staticLoader) {
+      staticLoader.style.opacity = "0";
+      setTimeout(() => {
+        staticLoader.remove();
+      }, 200);
+    }
+  }, []);
 
   return (
     <>
-      {loaded && ui}
+      {ui}
       <Canvas
         {...canvasProps}
         frameloop={loaded ? "always" : "never"}
@@ -38,9 +52,8 @@ export function PreloadedScene({
           preloadTextures={preloadTextures}
           preloadGLTF={preloadGLTF}
           preloadAudio={preloadAudio}
-          setLoaded={setLoaded}
         >
-          {loaded && scene}
+          {loadedAssets && scene}
         </WaitForFirstRender>
       </Canvas>
     </>
