@@ -6,7 +6,7 @@ import {
   VStack,
   Wrap,
 } from "@chakra-ui/react";
-import React, { useLayoutEffect } from "react";
+import React from "react";
 import { BsGithub, BsTwitter, BsTwitterX } from "react-icons/bs";
 import { PiFileArchiveDuotone, PiMailboxDuotone } from "react-icons/pi";
 
@@ -24,13 +24,13 @@ export function Root() {
   const scrollContainerRef = React.useRef<HTMLDivElement>(null!);
   const titleContainerRef = React.useRef<HTMLDivElement>(null!);
 
-  useLayoutEffect(() => {
-    scrollContainerRef.current.scrollTo({
-      top:
-        titleContainerRef.current.offsetTop -
-        (window.innerHeight - titleContainerRef.current.clientHeight) / 2,
-      behavior: "instant",
-    });
+  React.useEffect(() => {
+    // scrollContainerRef.current.scrollTo({
+    //   top:
+    //     titleContainerRef.current.offsetTop -
+    //     (window.innerHeight - titleContainerRef.current.clientHeight) / 2,
+    //   behavior: "instant",
+    // });
   }, []);
 
   return (

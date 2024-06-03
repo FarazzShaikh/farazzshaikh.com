@@ -40,7 +40,7 @@ export function Camera() {
   return (
     <>
       <PerspectiveCamera position={initialPosition} makeDefault fov={50} />
-      <Bounds fit observe margin={isVertical ? 0.5 : 0.7}>
+      <Bounds fit observe margin={isVertical ? 0.5 : 0.6}>
         <mesh rotation-y={Math.PI / 4}>
           <boxGeometry args={[3, 1, 4]} />
           <meshBasicMaterial color="red" visible={false} />
@@ -50,6 +50,8 @@ export function Camera() {
       {isMobile && (
         <OrbitControls
           makeDefault
+          enableZoom={false}
+          enablePan={false}
           dampingFactor={0.001}
           maxPolarAngle={MathUtils.degToRad(60)}
           minPolarAngle={MathUtils.degToRad(50)}

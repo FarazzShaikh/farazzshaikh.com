@@ -1,7 +1,8 @@
 import { META } from "@/utils/meta";
+import { StaticProps } from "@/utils/types";
 import NextHead from "next/head";
 
-export function Head() {
+export function Head({ lastUpdated }: StaticProps) {
   return (
     <NextHead>
       <title>{META.DEMOS.SUNDAY_AFTERNOON.TITLE}</title>
@@ -40,6 +41,8 @@ export function Head() {
         rel="canonical"
         href="https://farazshaikh.com/demos/sunday-afternoon"
       />
+
+      <meta httpEquiv="last-modified" content={lastUpdated} />
     </NextHead>
   );
 }

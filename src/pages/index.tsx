@@ -1,5 +1,6 @@
 import { Root } from "@/components/root";
 import { META } from "@/utils/meta";
+import { StaticProps } from "@/utils/types";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { Homemade_Apple, Lato, Playfair_Display } from "next/font/google";
 import Head from "next/head";
@@ -19,7 +20,7 @@ const HomemadeApple = Homemade_Apple({
   subsets: ["latin"],
 });
 
-export default function Home() {
+export default function Home({ lastUpdated }: StaticProps) {
   const theme = useMemo(
     () =>
       extendTheme({
@@ -64,6 +65,8 @@ export default function Home() {
         />
 
         <link rel="canonical" href="https://farazshaikh.com" />
+
+        <meta name="http-equiv" content={lastUpdated} />
       </Head>
 
       <ChakraProvider theme={theme}>

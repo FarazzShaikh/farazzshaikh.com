@@ -1,6 +1,7 @@
 import { SundayAfternoon } from "@/components/demos/sunday-afternoon";
 import { Head } from "@/components/demos/sunday-afternoon/Head";
 import { META } from "@/utils/meta";
+import { StaticProps } from "@/utils/types";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { Homemade_Apple, Raleway } from "next/font/google";
 import { useMemo } from "react";
@@ -14,7 +15,7 @@ const RalewayVariable = Raleway({
   subsets: ["latin"],
 });
 
-export default function Page() {
+export default function Page(staticProps: StaticProps) {
   const theme = useMemo(
     () =>
       extendTheme({
@@ -48,7 +49,7 @@ export default function Page() {
         `}
       </style>
 
-      <Head />
+      <Head {...staticProps} />
 
       <ChakraProvider theme={theme}>
         <SundayAfternoon />
@@ -58,7 +59,15 @@ export default function Page() {
 }
 
 export function getStaticProps() {
+  const date = new Date();
+  const isoDateTime = new Date(
+    date.getTime() - date.getTimezoneOffset() * 60000
+  ).toISOString();
+  const lastUpdated = isoDateTime.slice(0, 10);
+
   return {
-    props: {},
+    props: {
+      lastUpdated: lastUpdated,
+    },
   };
 }

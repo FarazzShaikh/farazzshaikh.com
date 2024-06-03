@@ -1,4 +1,8 @@
+import { useApp } from "@/context/AppContext/store";
+import { Debug, DebugTunnel } from "@/context/DebugContext";
+import { useDebug } from "@/context/DebugContext/store";
 import { useLoader } from "@/context/LoaderContext/store";
+import { Box } from "@chakra-ui/react";
 import { Canvas, CanvasProps } from "@react-three/fiber";
 import { useEffect } from "react";
 import { WaitForFirstRender } from "../context/LoaderContext/WaitForFirstRender";
@@ -25,6 +29,9 @@ export function PreloadedScene({
   const loaded = useLoader((s) => s.loaded);
   const loadedAssets = useLoader((s) => s.loadedAssets);
 
+  const isDebug = useDebug((s) => s.isDebug);
+  const isRecordingMode = useApp((s) => s.isRecordingMode);
+
   useEffect(() => {
     const staticLoader = document.querySelector(
       ".loader-container"
@@ -39,7 +46,15 @@ export function PreloadedScene({
 
   return (
     <>
-      {ui}
+      <DebugTunnel.Out />
+
+      <Box
+        opacity={Number(!isDebug && !isRecordingMode)}
+        transition="opacity 0.2s ease-in-out"
+      >
+        {ui}
+      </Box>
+
       <Canvas
         {...canvasProps}
         frameloop={loaded ? "always" : "never"}
@@ -48,6 +63,8 @@ export function PreloadedScene({
           height: "100%",
         }}
       >
+        {isDebug && <Debug />}
+
         <WaitForFirstRender
           preloadTextures={preloadTextures}
           preloadGLTF={preloadGLTF}

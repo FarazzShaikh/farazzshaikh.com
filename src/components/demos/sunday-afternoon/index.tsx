@@ -11,11 +11,11 @@ import { Lights } from "./3d/Lights";
 
 import { useEffect, useState } from "react";
 import { Loader } from "./ui/Loader";
-import { Overlay } from "./ui/Overlay";
 import { useAudio } from "./useAudio";
 
 import { PreloadedScene } from "@/components/PreloadedScene";
 import { ASSETS } from "./assets";
+import { Overlay } from "./ui/Overlay";
 
 function WoodenFloor3D() {
   return (

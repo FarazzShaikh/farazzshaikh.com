@@ -16,7 +16,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { BsInfoCircleFill } from "react-icons/bs";
+import { BsCodeSlash, BsInfoCircleFill } from "react-icons/bs";
 import PlayingLottie from "./audioPlaybackLottie.json";
 
 import Lottie from "react-lottie";
@@ -65,14 +65,26 @@ export function Info() {
             </VStack>
           </Link>
 
-          <Tooltip label={"Tell me more"}>
-            <IconButton
-              size="xs"
-              icon={<BsInfoCircleFill />}
-              aria-label={"Open Info"}
-              onClick={() => setInfoOpen((prev) => !prev)}
-            />
-          </Tooltip>
+          <HStack>
+            <Tooltip label={"View code"}>
+              <IconButton
+                as="a"
+                size="sm"
+                icon={<BsCodeSlash />}
+                aria-label={"Open Info"}
+                href="https://github.com/FarazzShaikh/farazshaikh.com/tree/main/src/components/demos/sunday-afternoon"
+                target="_blank"
+              />
+            </Tooltip>
+            <Tooltip label={"Tell me more"}>
+              <IconButton
+                size="sm"
+                icon={<BsInfoCircleFill />}
+                aria-label={"Open Info"}
+                onClick={() => setInfoOpen((prev) => !prev)}
+              />
+            </Tooltip>
+          </HStack>
         </HStack>
       )}
 
@@ -103,6 +115,7 @@ export function Info() {
                 w="50%"
               />
               <Text>Shadows and light have always fascinated me.</Text>
+              <br />
               <Heading as="h2" size="lg" fontFamily="Homemade Apple">
                 Credits
               </Heading>
