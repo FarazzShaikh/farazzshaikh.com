@@ -4,7 +4,6 @@ import { useDebug } from "@/context/DebugContext/store";
 import { useLoader } from "@/context/LoaderContext/store";
 import { Box } from "@chakra-ui/react";
 import { Canvas, CanvasProps } from "@react-three/fiber";
-import { useEffect } from "react";
 import { WaitForFirstRender } from "../context/LoaderContext/WaitForFirstRender";
 
 interface LoaderProviderProps {
@@ -31,18 +30,6 @@ export function PreloadedScene({
 
   const isDebug = useDebug((s) => s.isDebug);
   const isRecordingMode = useApp((s) => s.isRecordingMode);
-
-  useEffect(() => {
-    const staticLoader = document.querySelector(
-      ".loader-container"
-    ) as HTMLDivElement;
-    if (staticLoader) {
-      staticLoader.style.opacity = "0";
-      setTimeout(() => {
-        staticLoader.remove();
-      }, 200);
-    }
-  }, []);
 
   return (
     <>

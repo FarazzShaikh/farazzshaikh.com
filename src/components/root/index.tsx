@@ -10,7 +10,11 @@ import React from "react";
 import { BsGithub, BsTwitter, BsTwitterX } from "react-icons/bs";
 import { PiFileArchiveDuotone, PiMailboxDuotone } from "react-icons/pi";
 
-export function Root() {
+interface RootProps {
+  copy: string;
+}
+
+export function Root({ copy }: RootProps) {
   const hobbyWork = new Array(10).fill(0).map((_, i) => ({
     id: i,
     src: "https://picsum.photos/200/300",
@@ -140,7 +144,7 @@ export function Root() {
           fontWeight="thin"
           fontStyle="italic"
         >
-          The rest of this site is under construction
+          {copy}
         </Heading>
       </VStack>
       {/* <Flex

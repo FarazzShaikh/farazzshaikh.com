@@ -70,7 +70,7 @@ export default function Home({ lastUpdated }: StaticProps) {
       </Head>
 
       <ChakraProvider theme={theme}>
-        <Root />
+        <Root copy="The rest of this site is under construction" />
       </ChakraProvider>
     </>
   );
