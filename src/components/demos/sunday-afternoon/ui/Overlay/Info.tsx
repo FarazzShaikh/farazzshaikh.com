@@ -29,7 +29,7 @@ export function Info() {
       {!infoOpen && (
         <HStack p={4} w="full" justify="space-between">
           <Link isExternal href="https://www.youtube.com/watch?v=E_xhCJtoW-8">
-            <VStack align="flex-start" gap={0}>
+            <VStack align="flex-start" gap={0} pointerEvents="all">
               <Text
                 fontSize="2xs" //
                 color="white"
@@ -65,7 +65,7 @@ export function Info() {
             </VStack>
           </Link>
 
-          <HStack>
+          <HStack pointerEvents="all">
             <Tooltip label={"View code"}>
               <IconButton
                 as="a"

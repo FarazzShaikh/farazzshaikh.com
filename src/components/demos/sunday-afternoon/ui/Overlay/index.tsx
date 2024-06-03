@@ -23,10 +23,9 @@ const MotionBox = motion(Box);
 export function Overlay({ started }: { started: boolean }) {
   return (
     <MotionBox
-      initial={{ opacity: 0, pointerEvents: "none" }}
+      initial={{ opacity: 0 }}
       animate={{
         opacity: started ? 1 : 0,
-        pointerEvents: started ? "auto" : "none",
       }}
       transition={{ duration: 2, delay: 3.5 }}
       position="fixed"
@@ -35,6 +34,7 @@ export function Overlay({ started }: { started: boolean }) {
       zIndex="docked"
       w="full"
       h="full"
+      pointerEvents="none"
     >
       <Info />
 
@@ -64,7 +64,7 @@ export function Overlay({ started }: { started: boolean }) {
           Sunday afternoon
         </Heading>
 
-        <HStack mt={2} w="full">
+        <HStack mt={2} w="full" pointerEvents="all">
           <Tooltip label="My Github">
             <IconButton
               as="a"
