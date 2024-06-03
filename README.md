@@ -1,4 +1,4 @@
-# (farazshaikh.com)[https://farazshaikh.com]
+# [farazshaikh.com](https://farazshaikh.com)
 
 My personal website housing my hobby and professional projects.
 
