@@ -14,6 +14,7 @@
     "@emotion/styled": "^11.11.5",
     "@fontsource-variable/raleway": "^5.0.20",
     "@fontsource/homemade-apple": "^5.0.19",
+    "@next/third-parties": "^14.2.3",
     "@react-three/drei": "^9.105.6",
     "@react-three/fiber": "^8.16.6",
     "@react-three/postprocessing": "^2.16.2",
