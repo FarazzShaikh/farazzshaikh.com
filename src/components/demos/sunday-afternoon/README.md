@@ -1,4 +1,4 @@
-# Sunday Afternoon
+# [Sunday Afternoon](https://farazshaikh.com/demos/sunday-afternoon)
 
 An exploration of shadows and light in WebGL based on a
 photograph I took during a vacation to Ooty, Tamil Nadu, India
