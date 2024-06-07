@@ -18,7 +18,7 @@ export function Head({ lastUpdated }: StaticProps) {
       <meta property="og:type" content="website" />
       <meta
         property="og:url"
-        content="https://farazshaikh.com/demos/sunday-afternoon"
+        content="https://farazzshaikh.com/demos/sunday-afternoon"
       />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content="@CantBeFaraz" />
@@ -39,7 +39,7 @@ export function Head({ lastUpdated }: StaticProps) {
 
       <link
         rel="canonical"
-        href="https://farazshaikh.com/demos/sunday-afternoon"
+        href="https://farazzshaikh.com/demos/sunday-afternoon"
       />
 
       <meta httpEquiv="last-modified" content={lastUpdated} />

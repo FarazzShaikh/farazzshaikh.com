@@ -52,7 +52,7 @@ export default function Custom404({ lastUpdated }: StaticProps) {
         <meta property="og:title" content={META.ROOT.TITLE} />
         <meta property="og:description" content={META.ROOT.DESCRIPTION} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://farazshaikh.com" />
+        <meta property="og:url" content="https://farazzshaikh.com" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content="@CantBeFaraz" />
         <meta name="twitter:title" content={META.ROOT.TITLE} />
@@ -63,8 +63,6 @@ export default function Custom404({ lastUpdated }: StaticProps) {
           name="keywords"
           content={META.KEYWORDS_BASE + META.ROOT.KEYWORDS}
         />
-
-        <link rel="canonical" href="https://farazshaikh.com" />
 
         <meta name="http-equiv" content={lastUpdated} />
       </Head>

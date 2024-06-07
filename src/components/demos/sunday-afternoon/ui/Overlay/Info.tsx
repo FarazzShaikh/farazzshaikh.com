@@ -72,7 +72,7 @@ export function Info() {
                 size="sm"
                 icon={<BsCodeSlash />}
                 aria-label={"Open Info"}
-                href="https://github.com/FarazzShaikh/farazshaikh.com/tree/main/src/components/demos/sunday-afternoon"
+                href="https://github.com/FarazzShaikh/farazzshaikh.com/tree/main/src/components/demos/sunday-afternoon"
                 target="_blank"
               />
             </Tooltip>
