@@ -6,7 +6,7 @@ import {
   VStack,
   Wrap,
 } from "@chakra-ui/react";
-import { sendGAEvent } from "@next/third-parties/google";
+import { track } from "@vercel/analytics";
 import React from "react";
 import { BsGithub, BsTwitter, BsTwitterX } from "react-icons/bs";
 import { PiFileArchiveDuotone, PiMailboxDuotone } from "react-icons/pi";
@@ -102,7 +102,7 @@ export function Root({ copy }: RootProps) {
                 target="_blank"
                 aria-label="Github"
                 icon={<BsGithub />}
-                onClick={() => sendGAEvent({ event: "visit_github" })}
+                onClick={() => track("visit_github")}
               />
             </Tooltip>
             <Tooltip label="My X (Twitter)">
@@ -114,7 +114,7 @@ export function Root({ copy }: RootProps) {
                 leftIcon={<BsTwitterX />}
                 rightIcon={<BsTwitter />}
                 alignItems="center"
-                onClick={() => sendGAEvent({ event: "visit_twitter" })}
+                onClick={() => track("visit_twitter")}
               >
                 |
               </Button>
@@ -124,7 +124,7 @@ export function Root({ copy }: RootProps) {
                 leftIcon={<PiMailboxDuotone />}
                 as="a"
                 href="mailto:farazzshaikh@gmail.com"
-                onClick={() => sendGAEvent({ event: "visit_email" })}
+                onClick={() => track("visit_email")}
               >
                 Work with me
               </Button>
@@ -135,7 +135,7 @@ export function Root({ copy }: RootProps) {
                 as="a"
                 href="https://docs.google.com/document/d/1jHKUCCnfx2CJxI1LnYGwItJUBDeiTaf_CqLASPxfPIg/edit"
                 target="_blank"
-                onClick={() => sendGAEvent({ event: "visit_portfolio" })}
+                onClick={() => track("visit_portfolio")}
               >
                 Portfolio
               </Button>

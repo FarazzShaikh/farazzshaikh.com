@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { StartButton } from "./styled";
 
 import { useLoader } from "@/context/LoaderContext/store";
-import { sendGAEvent } from "@next/third-parties/google";
+import { track } from "@vercel/analytics";
 import { motion } from "framer-motion";
 
 const MotionBox = motion(Box);
@@ -61,7 +61,7 @@ export function Loader({
           loadingDone ? (
             <StartButton
               onClick={() => {
-                sendGAEvent({ event: "start_demo", value: "sunday_afternoon" });
+                track("start_demo", { demo: "sunday-afternoon" });
                 setStarted(true);
               }}
             >
